@@ -1,8 +1,25 @@
 ﻿# 游戏的脚本可置于此文件中。
 
 # 声明此游戏使用的角色。颜色参数可使角色姓名着色。
+# 说明：该角色表可用于简化对话的书写。可以只在这里添加常用角色。
+# 该部分之后可能会被移动到单独的文件。
 
-define e = Character("艾琳")
+define conway = Character("冠军")
+define lian = Character("连南")
+define bwt = Character("小萝卜")
+define nuo = Character("诺诺")
+define ming = Character("小明")
+define wqbh = Character("万千儿")
+define shou = Character("兽兽")
+define tea = Character("小茶")
+define lei = Character("雷永宁")
+define han = Character("韩韩")
+define zhuang = Character("壮壮")
+define yourong = Character("有容")
+define yinyin = Character("淫淫")
+define zheng = Character("郑瑜坤")
+
+
 
 default gugu_value = 0
 default dunhuang_value = 0
@@ -76,12 +93,12 @@ label slp:
     # “eileen happy.png”的文件来将其替换掉。
 label lb1:
 
-    "韩韩""前四天吧。"
-    "郑玉昆""我都行"
-    "连南""那就前四天？"
-    "诺诺""好哇"
-    "小明""为啥才四天，不是九天假吗？"
-    "冠军""狗屎"
+    han"前四天吧。"
+    zheng"我都行"
+    lian"那就前四天？"
+    nuo"好哇"
+    ming"为啥才四天，不是九天假吗？"
+    conway"狗屎"
     "……""……"
 
     "等等……九天假？"
@@ -90,17 +107,17 @@ label lb1:
     "2018年8月13日！！！"
     "这是怎么回事！"
 
-    "雷永宁""为啥叫小精灵和老百姓？"
-    "冠军""生是你的小精灵，死是你的老百姓，这都不知道？"
-    "小萝卜""让我看看谁比我渣"
+    lei"为啥叫小精灵和老百姓？"
+    conway"生是你的小精灵，死是你的老百姓，这都不知道？"
+    bwt"让我看看谁比我渣"
     "……""……"
 
     "这不是当时去东极岛的群吗？"
     "莫非……"
 
-    "连南""我刚才看到樱桃神进来了啊，怎么一直不说话？"
-    "小萝卜""@樱桃神 爆个照吧"
-    "兽兽""樱桃神你前四天可以吗？"
+    lian"我刚才看到樱桃神进来了啊，怎么一直不说话？"
+    bwt"@樱桃神 爆个照吧"
+    shou"樱桃神你前四天可以吗？"
 
     "怎么回答大家呢？"
 
@@ -116,9 +133,9 @@ label cnt:
 
     # 此处显示各行对话。
 
-    e "您已创建一个新的 Ren'Py 游戏。"
+    tea "您已创建一个新的 Ren'Py 游戏。"
 
-    e "当您完善了故事、图片和音乐之后，您就可以向全世界发布了！"
+    tea "当您完善了故事、图片和音乐之后，您就可以向全世界发布了！"
 
     return
 
