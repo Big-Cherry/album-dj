@@ -1,0 +1,27 @@
+# ###########################################################
+#            Copyright (c) 2020 BigCherry Team
+#                   All Rights Reserved 
+#
+#  filename: .gitignore
+#  description: the Git ignore rules for Ren'py project. 
+#  Author: Wentian Bu
+#  Version: 1.0
+#  
+# ###########################################################
+
+# Byte-compiled file (Ren'py edition)
+*.rpyc
+
+# Backup file (lots of backup files will be generated automatically, include pictures and scripts)
+*.bak
+
+# saves (The game will save your progress automatically when you running the game program)
+saves/
+
+# cache
+cache/
+
+# Errors and Logs (Everyone may make errors when developing. There is no need to upload these logs.)
+errors.txt
+log.txt
+traceback.txt
