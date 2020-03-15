@@ -382,20 +382,27 @@ style main_menu_frame:
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -20
+    xalign 0.6
+    xoffset 30
     xmaximum 800
-    yalign 1.0
+    yalign 0.5
     yoffset -20
 
 style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
+    # properties gui.text_properties("main_menu", accent=True)
+    text_align 0.5
 
 style main_menu_title:
-    properties gui.text_properties("title")
+    # properties gui.text_properties("title") 
+    size 75
+    color "ffffff"
 
 style main_menu_version:
-    properties gui.text_properties("version")
+    # properties gui.text_properties("version")
+    size 30
+    xalign 0.55
+    xoffset -10
+    
 
 
 ## 游戏菜单屏幕 ######################################################################
