@@ -23,7 +23,7 @@
 ## 开发指引
 
 开发指引会逐渐逐步更新。
-您可以阅读该项目的[Wiki](https://github.com/Big-Cherry/album/Wiki)来获取简明的开发指南，助您快速上手参与开发。
+您可以阅读该项目的 [Wiki](https://github.com/Big-Cherry/album/wiki) 来获取简明的开发指南，助您快速上手参与开发。
 
 可以在这里找到完整的Ren'Py教程：[Ren'py中文文档](http://renpy.cn/doc/index.html)
 
