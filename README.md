@@ -21,7 +21,9 @@
 
 ## 开发指引
 
-开发指引会逐渐逐步更新。
+简明的开发指引请在GitHub上查看这个仓库的[Wiki](https://github.com/Big-Cherry/album/wiki)。这些指引由小萝卜综合官方文档编写，力图用典型的示例和最精炼的内容，让读者在最短时间内能够入门脚本的编写。
 
-可以在这里找到完整的Ren'py教程：[Ren'py中文文档](http://renpy.cn/doc/index.html)
+开发指引会逐步更新。
+
+可以在这里找到完整的Ren'Py教程：[Ren'Py官方中文文档](http://renpy.cn/doc/index.html)
 
