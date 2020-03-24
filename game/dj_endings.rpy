@@ -84,7 +84,7 @@ label .end05:
     me"小杰瑞？你又是哪冒出来的"
     "小杰瑞""我们没买到座位，只有无座了，只能在厕所门槛混了一晚上，太求惨了..."
 
-    play sound "audio/qqddd.mp3"
+    play sound "audio/sound/qqddd.mp3"
     "群通知""Conway邀请你加入群聊"
     "怎么还是这些熟人？"
     me"@Conway 这又建了个什么群？"

@@ -32,7 +32,7 @@ jump .s01room
 
 label .s01room:
 
-    play music "audio/main.mp3"
+    play music "audio/bgm/main.mp3"
 
     show text "2020年3月9日" at truecenter
     with dissolve
@@ -58,7 +58,7 @@ label .s01room:
     
     "嗯？怎么回事？我刚才晕倒了吗？"
 
-    play sound "audio/qqddd.mp3"
+    play sound "audio/sound/qqddd.mp3"
     
     "群消息""Conway邀请你加入群“小精灵和老百姓”"
     "什么小精灵？什么老百姓？"
