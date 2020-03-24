@@ -11,6 +11,7 @@
 
 # Byte-compiled file (Ren'py edition)
 *.rpyc
+*.rpymc
 
 # Backup file (lots of backup files will be generated automatically, include pictures and scripts)
 *.bak
