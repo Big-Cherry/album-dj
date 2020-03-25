@@ -19,8 +19,7 @@ label dbgend:
 label dj_endings:
 label .end01: # By Alan Li
     # 跳过回忆
-    "【End 01】 你的毕业论文得了优秀。"
-    "游戏结束了。"
+    "End 01 - 你的毕业论文得了优秀。"
     return
 
 label .end02: # By Wentian Bu
@@ -92,4 +91,4 @@ label .end05:
     pause 1
     "列车广播""密云"
 
-    "End 05 - 行进的火车"
+    "End 05 - 行进的列车"
