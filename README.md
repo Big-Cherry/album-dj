@@ -1,4 +1,5 @@
 # 大樱桃AVG纪念册
+![](https://img.shields.io/badge/status-developing-yellow) ![](https://img.shields.io/badge/rate-★★★★★-brightgreen) ![](https://img.shields.io/badge/language-Ren'Py-brightgreen) ![](https://img.shields.io/badge/platform-win%20%7C%20osx%20%7C%20html5-lightgrey) ![](https://img.shields.io/badge/stories-1-brightgreen)
 ## 背景
 
 大樱桃纪念册的概念首次提出是在2016年暑假。当时预想的是制作一本纸质的全彩照片、文字纪念册，由冠军等人设计、编撰。最开始设立的DDL是在开学后（2016年9月）完成并交付印刷，然后邮寄到大樱桃的各位成员的学校。
@@ -17,13 +18,13 @@
 
 我们欢迎任何愿意大樱桃成员加入我们，或者向我们提供故事、共同创作剧本。
 
-由于AVG的游戏通过Ren'py引擎开发，该引擎主要采用纯文本的脚本，因此纪念册的协作变得更加简单了。我们将工程放在GitHub上开源，欢迎你为我们贡献代码、图片等素材。
+由于AVG的游戏通过Ren'Py引擎开发，该引擎主要采用纯文本的脚本，因此纪念册的协作变得更加简单了。我们将工程放在GitHub上开源，欢迎你为我们贡献代码、图片等素材。
 
 ## 开发指引
 
-简明的开发指引请在GitHub上查看这个仓库的[Wiki](https://github.com/Big-Cherry/album/wiki)。这些指引由小萝卜综合官方文档编写，力图用典型的示例和最精炼的内容，让读者在最短时间内能够入门脚本的编写。
+开发指引会逐渐逐步更新。
 
-开发指引会逐步更新。
+您可以阅读该项目的 [Wiki](https://github.com/Big-Cherry/album/wiki) 来获取简明的开发指南，助您快速上手参与开发。
 
 可以在这里找到完整的Ren'Py教程：[Ren'Py官方中文文档](http://renpy.cn/doc/index.html)
 
