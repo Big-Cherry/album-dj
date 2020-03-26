@@ -53,13 +53,13 @@ define gui.interface_text_color = '#ffffff'
 ## 字体和字体大小 #####################################################################
 
 ## 用于游戏内文本的字体。
-define gui.text_font = "SourceHanSans-Light-Lite.ttf"
+define gui.text_font = "PingFang Medium.ttf"
 
 ## 用于角色名称的字体。
-define gui.name_text_font = "SourceHanSans-Light-Lite.ttf"
+define gui.name_text_font = "PingFang Medium.ttf"
 
 ## 用于游戏外文本的字体。
-define gui.interface_text_font = "SourceHanSans-Light-Lite.ttf"
+define gui.interface_text_font = "PingFang Medium.ttf"
 
 ## 普通对话文本的大小。
 define gui.text_size = 22
@@ -262,7 +262,7 @@ define gui.page_spacing = 0
 define gui.slot_spacing = 10
 
 ## 标题菜单文本的位置。
-define gui.main_menu_text_xalign = 0.0
+define gui.main_menu_text_xalign = 0.5
 
 
 ## Frames ######################################################################

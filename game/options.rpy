@@ -41,7 +41,7 @@ define gui.about = _p("""
 ## 在生成的发布版中，可执行文件和目录所使用的短名称。此处必须是仅 ASCII 字符，并
 ## 且不得包含空格、冒号和分号。
 
-define build.name = "tourofeastpole"
+define build.name = "bigcherryalbum"
 
 
 ## 音效和音乐 #######################################################################
@@ -118,12 +118,12 @@ define config.window_hide_transition = Dissolve(.2)
 
 ## 控制默认的文字显示速度。默认的 0 是瞬间，而其他数字则是每秒显示出的字符数。
 
-default preferences.text_cps = 15
+default preferences.text_cps = 20
 
 
 ## 默认的自动前进延迟。越大的数字会产生越长的等待，有效范围为 0 - 30。
 
-default preferences.afm_time = 15
+default preferences.afm_time = 10
 
 
 ## 存档目录 ########################################################################
