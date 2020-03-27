@@ -1,4 +1,4 @@
-﻿## 此文件包含有可自定义您游戏的设置。
+## 此文件包含有可自定义您游戏的设置。
 ##
 ## 以“##”开头的语句是注释，您不应该对其取消注释。以“#”开头的语句是注释掉的代码，
 ## 在适用的时候您可能需要对其取消注释。
@@ -197,3 +197,7 @@ init python:
 ## 与 itch.io 工程关联的用户名和工程名，以斜杠分隔。
 
 # define build.itch_project = "renpytom/test-project"
+
+## Set developer mode
+
+define config.developer = True
