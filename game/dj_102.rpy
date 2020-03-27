@@ -116,8 +116,7 @@ label .s07street:
             "等到你们到民宿，已经很晚了，大家都说你们没参加海边狂欢真遗憾。"
             $ money += 50
             if dj_withgirl:
-                # TODO: jump dj_girl.gs01room
-                jump dbgend
+                jump dj_girl.gs01room
             else:
                 jump .s13rooom
 
@@ -158,8 +157,7 @@ label .s11beach:
     """
 
     if dj_withgirl:
-        # TODO: jump dj_girl.gs01room
-        jump dbgend
+        jump dj_girl.gs01room
 
     "正在热闹着，突然发现原本坐在身边的卜和汪两人不见了。"
     "众人疑惑，终于发现这两个人竟然偷偷跑到上面的入口处坐着，似乎在窃窃私语聊着什么……"

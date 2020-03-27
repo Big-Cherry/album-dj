@@ -468,11 +468,11 @@ label .s30villa:
     if dj_withgirl:
         # FIXME: This value need discussion
         if dj_girl_opinion > 80:
-            # TODO: jump dj_girl label 12 girl message
-            jump dbgend
+            jump dj_girl.gs12message
+
         else:
-            # TODO: jump dj_girl label 16 girl love
-            jump dbgend
+            jump dj_girl.gs17love
+            
     else:
         jump .s31love
 
