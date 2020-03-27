@@ -19,15 +19,14 @@ label dbgend:
 label dj_endings:
 label .end01: # By Alan Li
     # 跳过回忆
-    "End 01 - 你的毕业论文得了优秀。"
+    "你的毕业论文得了优秀。"
+    "End 01 - 优秀的毕业论文"
     return
 
 label .end02: # By Wentian Bu
     # 咕咕结局
-    "【End 02】 你咕咕了群友们，弄哭了冠军。"
-    $ gugu_value += 10
-    "当前咕咕值：[gugu_value]，当前敦煌值：[dunhuang_value]"
-    "游戏结束了。"
+    "你咕咕了群友们，弄哭了冠军。"
+    "End 02 - 梨花带雨的冠军"
     return
 
 label .end03: # By Alan Li

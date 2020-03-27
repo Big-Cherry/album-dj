@@ -11,10 +11,7 @@
 
 # 全局属性定义区：
 
-default gugu_value = 0
 default dunhuang_value = 0
-default single_value = 0
-default money = 0
 
 # 游戏在此开始。
 
