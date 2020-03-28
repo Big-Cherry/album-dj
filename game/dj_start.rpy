@@ -14,11 +14,9 @@ label dj_start:
 image text1 = Text("生是你的老百姓", xalign=0.5, yalign=0.45, size=30)
 image text2 = Text("死是你的小精灵", xalign=0.5, yalign=0.55, size=30)
 
-show text1
-with dissolve
+show text1 with dissolve
 pause 0.5
-show text2
-with dissolve
+show text2 with dissolve
 pause 1
 hide text1
 hide text2
@@ -32,29 +30,23 @@ jump .s01room
 
 label .s01room:
 
-    play music "audio/bgm/main.mp3"
+    # play music "audio/bgm/main.mp3"
 
-    show text "2020年3月9日" at truecenter
-    with dissolve
+    show text "2020年3月9日" at truecenter with dissolve
     pause 1
 
     # 显示一个背景。此处默认显示占位图，但您也可以在图片目录添加一个文件
     # （命名为“bg room.png”或“bg room.jpg”）来显示。
-    scene bg room
-    with fade
+    scene home room with fade
 
     "你正在家中赶着毕业论文……"
-
-    
     "一阵眩晕……" with vpunch
     
-    show bg room
-    with Fade(0.1, 0.0, 0.8, color="#fff")
+    scene home room with Fade(0.1, 0.0, 0.8, color="#fff")
 
     "啊！？？？难道我感染了新冠病毒？妈妈，救我~~"
 
-    show bg room
-    with Fade(0.1, 0.0, 3.5, color="#fff")
+    scene home room with Fade(0.0, 0.5, 3.5, color="#000")
     
     "嗯？怎么回事？我刚才晕倒了吗？"
 
@@ -71,8 +63,7 @@ label .s01room:
         "论文要写不完了……":
             jump dj_endings.end01
         "看来今天身体不太舒服，还是睡觉吧":
-            show bg room
-            with Fade(0.1, 0.0, 1.5, color="#000")
+            show home room with Fade(2.0, 1.0, 1.5)
             "诶？我还是进了这个群"
             
     han"前四天吧。"
@@ -107,7 +98,7 @@ label .s01room:
         "听说这次行程艰苦，我还是算了吧，溜了溜了":
             jump dj_endings.end01
         
-    wqbh"@你 哇，你就是传说中的樱桃神吗？"
+    wqbh"@樱桃神 哇，你就是传说中的樱桃神吗？"
     me"新人学妹爆个照吧！"
     wqbh"我不我就不我偏不，有大佬罩着我"
     "尴尬……竟然被学妹拒绝了"
@@ -131,18 +122,17 @@ label .s01room:
 
 
 label .s02apartment:
-    scene
+    scene black with fade
 
-    show text "2018年9月28日" at truecenter
-    with dissolve
+    show text "2018年9月28日" at truecenter with dissolve
     pause 1
 
-    scene bg s02apartment
-    with fade
+    scene domitory with fade
     "时间过的真快...一不小心就到了九月底。"
     "你们约定的旅行时间就要到了，车牌船票和住宿也都妥当。"
     "但原本自告奋勇要煮海鲜的主席和一直想和大家一起玩的子玥姐姐最终选择了咕咕，有一些遗憾呢。"
 
+    # 这里可以插入铃声
     "突然，你的手机响了，是一个来自舟山的电话号码，很奇怪，但你还是接听了。"
     "原来是卖船票的淘宝老板。"
 
@@ -157,8 +147,8 @@ label .s02apartment:
 
     "于是你在群聊里跟大家告知了这个情况"
     yourong"有台风？那不如直奔钓鱼岛，插国旗！"
-    yinyin"咱们有planB吗？"
-    lian"PlanB...窝在舟山打UNO？"
+    yinyin"咱们有plan B吗？"
+    lian"Plan B...窝在舟山打污诺？"
     nuo"？？？凭啥打我？"
     zhuang"放心，上海结界"
     wqbh"对了，我们自己做饭吗？"

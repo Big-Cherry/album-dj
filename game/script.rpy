@@ -1,4 +1,4 @@
-﻿# ###########################################################
+# ###########################################################
 #            Copyright (c) 2020 BigCherry Team
 #                   All Rights Reserved 
 #
@@ -11,10 +11,15 @@
 
 # 全局属性定义区：
 
-default gugu_value = 0
 default dunhuang_value = 0
-default single_value = 0
-default money = 0
+
+# 特殊图像
+
+image black = Solid("#000")
+
+# 常用转场
+
+define phototake = Fade(0.1, 0.0, 0.1)
 
 # 游戏在此开始。
 
