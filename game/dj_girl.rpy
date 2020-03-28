@@ -17,8 +17,7 @@ default dj_gs01_ques1_flag = False
 label dj_girl:
 
 label .gs01room:
-    scene bg gs01room
-    with fade
+    scene zs villa room2 with fade
     "闹了一晚上，你和连南回到房间。"
     me"？？？这咋是大床房？"
     lian"哈哈哈哈没想到吧"
@@ -38,7 +37,7 @@ label .gs01room:
         "不行，老子天下第一，我要先洗":
             "说着你马上脱掉了衣服，冲进卫生间。"
             lian"狗屎！"
-            $ gs01room_ques1_flag = True
+            $ dj_gs01room_ques1_flag = True
             jump .gs02shower
 
         "（娇羞地）安南哥哥，我想和你一起洗":
@@ -50,8 +49,7 @@ label .gs01room:
             jump .gs04sos
 
 label .gs02shower:
-    scene bg gs02shower
-    with fade
+    scene zs villa shower with fade
     "你走进卫生间。"
     "？这个水龙头为什么这么像麦克风？"
     "不如来高歌一首，表达对明天旅程的期待。"
@@ -81,6 +79,7 @@ label .gs02shower:
             "你们一起过去，原来是房间刚才出现了蜘蛛。"
             "你们找了半天也没有找到蜘蛛，只好无功而返。"
             "于是连南去洗澡了，你坐在床上玩手机。"
+            scene zs villa room2 with fade
             jump .gs04sos
 
         "有点担心，赶紧拿出手机，给小茶发了个消息问问":
@@ -94,8 +93,7 @@ label .gs02shower:
 
 # FIXME: 这里与前面衔接似乎有点不流畅
 label .gs03room:
-    scene bg gs03room
-    with fade
+    scene zs villa room2 with fade
     "过了十分钟连南回来了，这时你已经洗完澡坐在床上。"
     me"她们怎么了？"
     lian"没啥，就是房间里有个大蜘蛛，我过去了找了半天，蜘蛛已经不见了，可能已经爬出去了。"
@@ -103,8 +101,6 @@ label .gs03room:
     jump .gs04sos
 
 label .gs04sos:
-    scene bg gs03room
-    with fade
     "正在玩手机，突然QQ上小茶突然来找你："
     tea"哥哥我好害怕，房间里刚才有个大蜘蛛在到处乱爬，我们不敢打。"
     menu:
@@ -126,8 +122,7 @@ label .gs04sos:
             jump .gs05spider
 
 label .gs05spider:
-    scene bg room
-    with fade
+    scene zs villa room1 with fade
     "你来到她们房间。"
     me"诶你们怎么躲在卫生间啊？"
     tea"它一直乱爬...厕所有个门可能安全一点"
@@ -171,14 +166,16 @@ label .gs05spider:
             jump .gs06morning
 
 label .gs06morning:
-    scene
+    scene black with fade
 
-    show text "2018年10月3日" at truecenter
-    with dissolve
-    pause 1
+    show text "2018年10月3日" at truecenter with dissolve
+    pause 0.5
+    image time4 = Text("上午9:00", xalign=0.5, yalign=0.55)
+    show time4 with dissolve
+    pause 1.0
 
-    scene bg gs06room
-    with fade
+    scene zs villa room2 with fade
+    # 闹钟音效
     "你被几遍闹钟叫醒，发现九点了，于是你给小茶打了电话。"
     "小茶的声音听起来有些疲倦，你不禁有些心疼。"
     tea"你过来我房间吧"
@@ -193,6 +190,7 @@ label .gs06morning:
             "然而你们在公交站等了好一会儿，一辆车都没有来，离开船的时间却越来越近……"
             jump .gs10taxi
 
+    scene zs villa room1 with dissolve
     "你来到了楼上，小茶为你开了门。你看到她面色不太好，黑眼圈很重。"
     me"昨天晚上没休息好吗？"
     tea"呜呜呜，别提了。昨天晚上你走以后，我们还是害怕大蜘蛛又从哪里爬出来，怕睡着了爬到床上，于是我和万千儿在卫生间洗漱台上坐了一夜……然后也几乎没睡着。"
@@ -200,8 +198,6 @@ label .gs06morning:
     jump .gs07sleep
 
 label .gs07sleep:
-    scene bg gs07room
-    with fade
     tea"哥哥，我好累。我想躺一会儿。"
     menu:
         "现在九点十分，你们的船票是十点半，坐车去码头路上可能会堵车，需要大半个小时。你怎么回复？"
@@ -222,8 +218,6 @@ label .gs07sleep:
             jump .gs13chat
 
 label .gs08bed:
-    scene bg gs08bed
-    with fade
     "小茶重新到了床上，你坐在床边。"
     tea"哥哥，其实……要不是因为你，我是不会来东极岛的。我想找个安静的地方散散心。"
     me"是...我知道的"
@@ -255,7 +249,10 @@ label .gs08bed:
             你张开双手抱住了小茶，一阵一阵的发香扑面而来，抱女孩子原来是这样的一种感觉啊……
 
             你闭上了眼睛，什么也不再想，慢慢陶醉在这种感受中了。
+            """
+            scene zs villa room1 with Fade(1.0, 0.5, 1.0)
 
+            """
             等到你们回过神来，走出门，已经快十点了。还有半个小时的时间……
 
             十点半的船，时间确实有点紧张。
@@ -267,8 +264,7 @@ label .gs08bed:
     
 
 label .gs10taxi:
-    scene bg gs10street
-    with fade
+    scene zs villa street with fade
     "看来要去码头只能坐出租车了。"
     "问题是，放眼一望，周围一辆车都没有。"
     "你有一些焦虑，如果不是小茶之前磨蹭，就算打不到出租也可以坐公交的……"
@@ -294,8 +290,7 @@ label .gs10taxi:
     jump .gs11ship
 
 label .gs11ship:
-    scene bg ship
-    with fade
+    scene ship wave with fade
     "上等舱的环境确实很不错，人不多，座位也还算宽敞，开船后还可以在甲板上享受海风、欣赏浪花。"
     "唯一美中不足的是没有信号，上不了网，但这也挺好，正好断绝了玩手机的机会，竟然有一种两个人与世隔绝、浪迹江湖的感觉。"
     tea"哥哥，你说，我们要是一直都在船上有多好啊"
@@ -327,21 +322,17 @@ label .gs11ship:
 
     你思索着这些问题，逐渐也睡着了。
     """
-    scene bg restaurant
-    with fade
+    scene dj stone photo with fade
     "经过两个多小时的航行，你们终于上了岛，也联系上了众人。他们在一家餐馆吃海鲜。"
     "等到你们过去，发现他们已经吃得差不多了，于是你们只好随便吃了几口，然后和众人合影返回民宿睡觉。"
 
-    scene bg villa
-    with fade
+    scene black with fade
     "不知过了多久，众人纷纷醒了过来，已经是晚上了。"
     "大家都前往厨房做饭，但小茶说要洗澡，你决定留下来陪她。"
     jump dj_103.s28villa
 
 
 label .gs12message:
-    scene bg villaroom
-    with fade
     "大家正在起劲地打着UNO，突然你的手机收到了一条消息。"
     tea"我们偷偷出去吧。"
     tea"我先出去，你过几分钟再出来，我在楼下门口等你。"
@@ -352,18 +343,20 @@ label .gs12message:
             pass
 
         "干什么啊，UNO这么好玩，我不想去":
-            jump .gs16love
+            jump .gs17love
 
+    scene dj villa out with dissolve
     "小茶悄悄出去了。过了几分钟，你借口上洗手间也出来了。来到楼下，小茶正等着你。"
     tea"我们去看星星吧。"
     me"嗯，走吧。"
 
 label .gs13chat:
-    scene bg outside
-    with fade
+    scene dj villa morning with fade
     """
     10月的海边已经进入了秋天，夜晚已经有点凉了。
+
     你们沿着狭窄的巷子走出了民宿区，来到一小片稍微开阔的地带。
+
     岛上的夜晚，天空格外清澈，繁星点点。你们找到一张长椅坐下来。
     """
     tea"哥哥，其实我是不想搞什么爱情保卫战才出来的。"
@@ -372,10 +365,47 @@ label .gs13chat:
     me"你今天上午说想要安安静静地聊会儿天的。"
     tea"嗯。"
     tea"哥哥……我心里还是很难过……"
-    tea"六月份的时候我认识了小殷。当时我们忙着筹划招生、宣传、找场地，每天都有好多事情要做。渐渐地，在工作以外，我和他也时常聊天，以至于无话不谈。后来衔接班开课了，我和他每天都要坐班，就坐在教室后面聊一天。我们聊人生，聊理想，聊爱好，聊过去……他说，你的眼睛真好看，就像星星一样闪亮。在认识之前，我们都打算大学好好学习四年；认识之后，我们的计划里都有了对方的位置。我和他都互相表白了，我们约好，在大学里再正式在一起。我真的好喜欢好喜欢他……我们在一起的每一分每一秒都好甜好甜……"
-    tea"可是我没想到，八月份开始军训以后，他突然对我冷淡了很多。那以前我给他发消息，他看到了都是秒回，那之后，我给他发消息，他总是过很长时间才回一两句，有时候甚至第二天才草草敷衍，而我却在屏幕另一端等得心力交瘁……最开始我以为我说错了话或者做错了事让他生气了，可是问他他却说我没错……他说，对不起，我们还是做回普通朋友吧。我当时快要崩溃了，我问他为什么，他说他也许没有他以为的那么喜欢我。于是，我们的恋爱还没有开始，就这么分手了……"
-    tea"我不知道为什么……为什么别人就能拥有甜甜的恋爱，为什么他之前那么温暖现在却又那么冷漠，为什么要给我美好的幻梦然后再狠狠地打碎，为什么计划里已经有了彼此他却绝情地转身离开……我真的喜欢他啊……"
+    tea"""
+    六月份的时候我认识了小殷。
 
+    当时我们忙着筹划招生、宣传、找场地，每天都有好多事情要做。
+
+    渐渐地，在工作以外，我和他也时常聊天，以至于无话不谈。
+
+    后来衔接班开课了，我和他每天都要坐班，就坐在教室后面聊一天。
+    
+    我们聊人生，聊理想，聊爱好，聊过去……
+    
+    他说，你的眼睛真好看，就像星星一样闪亮。
+    
+    在认识之前，我们都打算大学好好学习四年；认识之后，我们的计划里都有了对方的位置。
+    
+    我和他都互相表白了，我们约好，在大学里再正式在一起。我真的好喜欢好喜欢他……我们在一起的每一分每一秒都好甜好甜……
+    
+    可是我没想到，八月份开始军训以后，他突然对我冷淡了很多。
+    
+    那以前我给他发消息，他看到了都是秒回，
+    
+    那之后，我给他发消息，他总是过很长时间才回一两句，有时候甚至第二天才草草敷衍，而我却在屏幕另一端等得心力交瘁……
+    
+    最开始我以为我说错了话或者做错了事让他生气了，可是问他他却说我没错……
+    
+    他说，对不起，我们还是做回普通朋友吧。我当时快要崩溃了，我问他为什么，他说他也许没有他以为的那么喜欢我。
+    
+    于是，我们的恋爱还没有开始，就这么分手了……
+    
+    我不知道为什么……
+    
+    为什么别人就能拥有甜甜的恋爱
+    
+    为什么他之前那么温暖现在却又那么冷漠
+    
+    为什么要给我美好的幻梦然后再狠狠地打碎
+    
+    为什么计划里已经有了彼此他却绝情地转身离开……
+    
+    我真的喜欢他啊……
+    """
     "小茶的声音渐渐哽咽了，迎着星光，她脸颊上晶莹的泪水闪闪发亮。"
     menu:
         "你该怎么办？"
@@ -398,7 +428,7 @@ label .gs14winner:
     """ 
     me"好了好了，我们不提他了好吗？你不是想看星星嘛。"
     tea"嗯……"
-    # 这里可以插入星空的背景图，后面再换回来
+    scene dj stars with dissolve
     """
     你们抬起头，看着璀璨的星空。
 
@@ -440,8 +470,7 @@ label .gs14winner:
     
     ……
     """
-    scene bg villa
-    with fade
+    scene dj villa room night with fade
     """
     不知道过了多久，你们牵着手回到了另一边的民宿。
 
@@ -459,6 +488,7 @@ label .gs14winner:
 
     你伸出双手与她紧紧相拥……
     """
+    scene black with Fade(2.0, 1.0, 1.0)
     jump dj_endings.g_end06
 
 label .gs15loser:
@@ -597,6 +627,7 @@ label .gs16sucker:
     jump dj_endings.g_end07
 
 label .gs17love:
+    scene dj villa love1 with fade
     "渐渐地，大家都笑累了。"
     lian"来搞爱情保卫战！"
     wqbh"啥叫爱情保卫战"
@@ -613,6 +644,8 @@ label .gs17love:
     shou"关你p事，你继续主持人吧"
     "大家一齐把目光投向了你和小茶。"
     "……"
+
+    scene dj villa love2 with Fade(1.0, 0.3, 1.0)
     "大家安静围坐在房间里，聚光灯照在本次节目的两位主角——小茶和你身上。舒缓的配乐响起，安静的房间里，小茶开始了她的讲述……"
     tea"""
     高中毕业的那个暑假，我喜欢上了一个男孩子，他叫小殷。
@@ -644,6 +677,8 @@ label .gs17love:
     他的安慰是那么的恰到好处，我好像遇到了世界上另一个自己。
     
     后来你们计划来东极岛玩，他问我要不要一起来散散心，所以这次我就跟他来了。
+
+    ……
     """
     
     nuo"你觉得这是爱情吗？"
@@ -697,8 +732,7 @@ label .gs17love:
             jump .gs19giveup
 
 label .gs18follow:
-    scene bg outside
-    with fade
+    scene dj villa out with fade
     """
     你赶紧穿上鞋子冲出了民宿追上了小茶。
 
@@ -725,8 +759,7 @@ label .gs18follow:
     jump dj_endings.g_end08
 
 label .gs19giveup:
-    scene bg gs19outside
-    with fade
+    scene dj villa out with fade
     """
     你机械麻木地走下楼，秋夜的凉风迎面吹来，你打了个寒战，似乎稍微清醒了一点。
 

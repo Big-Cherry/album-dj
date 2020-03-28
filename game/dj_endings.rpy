@@ -19,24 +19,29 @@ label dbgend:
 label dj_endings:
 label .end01: # By Alan Li
     # 跳过回忆
+    # TODO: need background
     "你的毕业论文得了优秀。"
     "End 01 - 优秀的毕业论文"
     return
 
 label .end02: # By Wentian Bu
     # 咕咕结局
+    # TODO: need background
     "你咕咕了群友们，弄哭了冠军。"
     "End 02 - 梨花带雨的冠军"
     return
 
 label .end03: # By Alan Li
     # 逃离失败成为难民
+    scene bg end03 with fade
     "你们逃离失败被困在舟山客运站，过上了难民生活。"
     "End 03 - 难民的麦当劳"
+    scene black with Fade(3.0, 1.0, 0.0)
     return
 
 label .end04: # By Conway Tan
-    "特别关注""万千儿：❤❤❤"
+    # 特别关注音效
+    "特别关注""万千儿：❤❤❤"# 这三个字符显示不出来，可能需要插图
     "特别关注""万千儿：[[分享歌曲]一见钟情"
     "难道……她看出来了我的心思？这一切来得太突然了……"
     "还是试探性回复一下吧……"
@@ -48,29 +53,27 @@ label .end04: # By Conway Tan
     me"嗯，我已经把票给改了。"
     yinyin"好吧，台风来了，你路上小心。"
     # 上车场景
-    scene bg taxi
-    with fade
+    scene taxi night with fade
     "还是看看票吧，兴许运气好还有剩的呢？"
     "？！还有一张票！天助我也！管他呢，买了再说！"
     # 到达宁波站场景
-    scene bg station
-    with fade
+    scene nb station night with fade
     "车快开了，得赶快了。" 
     # 脚步声
     wqbh"桃神！桃神！" with vpunch
     wqbh"桃神你真的来了啊！"
-    wqbh"欸桃神你拉我去哪儿啊"
+    wqbh"诶桃神你拉我去哪儿啊"
     me"去珠海啊！快误车了，赶紧进去吧！"
-    wqbh"欸欸欸？……"
+    wqbh"诶诶诶？……"
     "……""……"
-    hide bg with dissolve
+    scene bg end04 with fade
     "你和万千儿一起前往了珠海，这一路上你们聊了很多！你们感觉和彼此情投意合，恭喜你们在一起了！"
     "End 04 - 意外的美好"
     return
 
 
 label .end05:
-    scene bg train
+    scene bg end05 with fade
     me"呼……终于上车了，看看敦煌人们发的照片吧。"
     "有点头晕……"
     "那间鬼宅……海底古墓、鬼宅密室，奇怪的铃铛声和带着海腥味的异想、神秘的人人网消息，杭州密云东极敦煌，又究竟意味着什么秘密？"
@@ -91,10 +94,11 @@ label .end05:
     "列车广播""密云"
 
     "End 05 - 行进的列车"
+    scene black with Fade(3.0, 1.0, 0.0)
+    return 
 
 label .g_end06:
-    scene bg villaroom
-    with fade
+    scene dj villa room day with fade
     """
     你睁开眼睛，发现天已经大亮，一看手机快十点了。昨天晚上居然和小茶在一张床上和衣睡着了。
 
@@ -113,20 +117,16 @@ label .g_end06:
     me"遗憾吗？"
     tea"有…那么一点点。不过，跟你在一起，我也一样开心呢。"
     
-    scene bg road
-    with fade
+    scene dj road leave with fade
     """
     你和小茶收好行李离开了民宿，向码头走去。
 
     今天风有点大，太阳也被云层挡住了，海面上也并不平静，台风快要来了。
 
     路上很多旅客拖着行李，行色匆匆地前往码头方向，看来大家都想抢在台风来临前离岛。
-
-    返程的票是中等舱，几乎没有窗户。海上风浪有点大，你感觉有点晕船。
     """
-
-    scene bg ship
-    with fade
+    scene ship middle with fade
+    "返程的票是中等舱。海上风浪有点大，你感觉有点晕船。"
     tea"怎么了？看你好像有点不太舒服，是不是晕船啊？"
     me"嗯，有一点。今天浪比较大，晃得难受。"
     tea"我去找工作人员要点晕船药吧。"
@@ -138,8 +138,7 @@ label .g_end06:
     "然而很快又轻轻拉起了你的手，"
     tea"桃桃，你还是靠一会儿吧，我不累的。我也想成为你可以依靠的人啊。"
 
-    scene bg station 
-    with fade
+    scene zs station with fade
     """
     轮船抵达了舟山市，风更大了，天上的云在翻滚着，台风真的要来了。你们吃了点麦当劳，然后立即坐车前往了宁波。
 
@@ -147,8 +146,7 @@ label .g_end06:
 
     等赶到酒店安顿下来，已经九点了。
     """
-    scene bg hotel
-    with fade
+    scene zs hotel with fade
     me"好饿啊，我们赶紧点外卖吧，再晚的话可就真没得吃了。"
     tea"哼，跟你出来我尽在赶路挨饿，男朋友当得一点都不合格哦。"
     me"这不是怕台风来了嘛，不然我们就去商圈吃完再回来了。"
@@ -160,8 +158,7 @@ label .g_end06:
     "吃完外卖，已经十一点了。赶了一天的路，两个人都很累，于是打了会儿王者就早早休息了。"
     "……"
     
-    scene bg hotel
-    with fade
+    scene taxi day with Fade(2.0, 2.0, 1.0)
     """
     醒来已经是中午了。收拾好行李来到楼下，发现台风真的来了。
 
@@ -179,8 +176,7 @@ label .g_end06:
     tea"可是人家第一次想和你单独去吃啦。"
     me"那我们明天到了就去吃？仙林大学城店好像离你们学校挺近的，据说冠军在那里一个人吃成了黑海会员。"
     tea"好呀！刚才诺诺姐在群里说伊比利亚黑猪肉超好吃诶，我也想吃！"
-    scene bg station 
-    with fade
+    scene nb station plat with fade
     """
     站台上，狂风夹杂着雨点再一次肆虐。你们牵着手走上了前往南京的列车。
 
@@ -192,11 +188,11 @@ label .g_end06:
 
     Good Ending - 徐徐展开的画卷
     """
+    scene black with Fade(3.0, 1.0, 0.0)
     return
 
 label .g_end07:
-    scene bg villaroom
-    with fade
+    scene dj villa room day with Fade(0.8, 1.0, 2.0)
     "门外传来一群人凌乱的脚步声和说话声，还有人砰砰砰地敲门。"
     "你迷迷糊糊起床打开门，发现是连南。"
     lian"你醒啦，我们四点多看日出，敲你们门敲了半天都没反应。二人世界怎么样？"
@@ -210,8 +206,7 @@ label .g_end07:
     tea"都怪你，昨天晚上在外面说那么晚害得我没起来。我也想去看日出啊！"
     me"对不起，昨天晚上我该提前问问他们的。我记得之前他们有人做了旅游攻略，结果我没有细看。"
 
-    scene bg road 
-    with fade
+    scene dj road leave with fade
     """
     收拾好行李，你和小茶走在去码头的路上。
 
@@ -233,8 +228,7 @@ label .g_end07:
     tea"可是我的行李好重啊。"
     "你松开了牵着她的左手，把她的背包背在背上，然后又接过了箱子。"
 
-    scene bg ship
-    with fade
+    scene ship middle with fade
     """
     码头入口排着长队，人头攒动，你尽力将她护在身前的一小片区域。
 
@@ -260,8 +254,7 @@ label .g_end07:
     等到了酒店安顿下来，已经九点多了。
     """
     
-    scene bg hotel 
-    with fade
+    scene zs hotel with fade
     tea"我好饿啊，跟你出来玩我可太惨了，一路上饿肚子。"
     me"哎，怪我没想到，当时上车前应该买点东西带着的。刚才坐出租车来酒店的时候感觉这酒店附近挺荒凉的，我们还是点外卖吧。"
     "打开美团饿了么看了一圈，发现附近真的没有什么好吃的，无奈之下还是选择了麦当劳。"
@@ -279,8 +272,7 @@ label .g_end07:
     tea"嗯嗯，哥哥最好了！"
     "……"
 
-    scene bg station
-    with fade
+    scene nb station day with fade
     "次日中午，你和小茶一起来到了车站。"
     "小茶的车是下午两点，候车室的检票口前已经排起了长队。小茶拖着行李站到了队伍里。"
     tea"哥哥，我下个月过生日你会来陪我吗？"
@@ -298,12 +290,12 @@ label .g_end07:
 
     Normal Ending - 埋藏心底的感情
     """
+    scene black with Fade(3.0, 1.0, 0.0)
     return
 
 
 label .g_end08:
-    scene bg villaroom 
-    with fade
+    scene dj villa room day with Fade(0.8, 1.0, 2.0)
     "你迷迷糊糊听到一阵嘈杂，睁开眼睛发现是众人回来了。"
     me"你们干什么去啊？"
     zhuang"你才醒啊，我们早晨四点多本来准备叫你，"
@@ -319,16 +311,14 @@ label .g_end08:
     ……
     """
     
-    scene bg road
-    with fade
+    scene dj road leave with fade
     """
     转眼十点多了，你和小茶拖着行李箱走在路上，两人都沉默无言。
     
     今天的风大了许多，天边的云在翻涌，海面也不再平静，台风快要来了。
     """
 
-    scene bg ship
-    with fade
+    scene ship middle with fade
     """
     返程的船票是中等舱，海上浪有点大，你有点晕船，昏昏沉沉地靠在座位上。
     
@@ -343,8 +333,7 @@ label .g_end08:
     大脑充斥着这些混乱的片段，你迷迷糊糊地睡着了。
     """
 
-    scene bg street
-    with fade
+    scene nb street with fade
     """
     轮船回到了舟山市，天阴沉得厉害，风越来越大了。
 
@@ -369,4 +358,5 @@ label .g_end08:
 
     Bad Ending - 渐行渐远的背影
     """
+    scene black with Fade(3.0, 1.0, 0.0)
     return

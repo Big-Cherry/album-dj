@@ -13,17 +13,16 @@
 label dj_102:
 
 label .s03apartment:
-    scene
+    scene black with fade
 
-    show text "2018年10月2日" at truecenter
-    with dissolve
+    show text "2018年10月2日" at truecenter with dissolve
     pause 1
 
-    scene bg s03apartment
-    with fade
+    scene domitory with fade
     "终于到了约定在舟山集合的日子。"
     menu:
         "你准备怎么出行呢？"
+        # TODO: 这里最好插不同的图
         "硬卧到宁波":
             "你和韩韩、小汪同行，但是只有你买到了卧铺票。"
             "你假惺惺地说把卧铺让给女孩子，没想到小汪一口答应，于是你只好和韩韩一起硬座坐到了宁波车站。"
@@ -39,8 +38,7 @@ label .s03apartment:
             jump .s04bus
 
 label .s04bus:
-    scene bg s04bus
-    with fade
+    scene bus phone with fade
     "你所在的小组终于抵达了宁波南站的汽车站。"
     "幸亏冠军提前发现大巴票需要预约，不然可真有些难顶。"
     "第一次见识舟山跨海大桥，由于大家来自全国各个省市，自然组成了五个小组，虽然遭遇了堵车，但大家位置共享互相吐槽对方真慢，确实很有趣。"
@@ -50,13 +48,12 @@ label .s04bus:
     me"好，我们组男生多，我们等会儿去吧。"
 
 label .s05mall:
-    scene bg station
-    with fade
+    scene zs station with fade
     "又经过了一个多小时的漫长堵车，你们终于到了舟山市的客运站"
     "走下大巴，天都已经黑了。果然，公交已经没有了，还是打出租吧。"
     "很快你们一行五人拦下了两辆出租，前往之前提到的那个商城。"
-    scene bg s05mall
-    with fade
+
+    scene zs mall with fade
     me"别看舟山是个岛，这个商场还蛮大捏"
     "小汪""我们去超市看看买什么吧"
     han"顺便看看有啥餐饮吧"
@@ -66,8 +63,7 @@ label .s05mall:
     "毕竟这是十几个人两天的口粮啊，要不然真要在东极岛上荒野求生了……"
 
 label .s06street:
-    scene bg s06street
-    with fade
+    scene zs mall with fade
     "你们在商城门口遇到了一个难顶的问题，这里非常不好打出租车！"
     "滴滴加钱到20元都没有人接单，看了看地图，才发现去民宿必经的大桥上是全红！！！"
     "过了半个小时，你们不禁有一丝绝望，难道真的要提着这么多东西走过大桥吗？"
@@ -98,15 +94,18 @@ label .s06street:
         
 label .s07street:
     "你们突然意识到后面还有一组是万千和壮壮，于是决定由你在这里等他俩的出租，这样问题就迎刃而解了。"
+    scene zs mall2 with fade
     "你来到了旁边一家标志性建筑洗浴娱乐城的门口，等待最后一组的出租车。"
     zhuang"我们下大巴了，但tm拦出租一看目的地都拒载。"
     me"是，那边桥上堵的很严重，都不愿意过去，我们刚才也遇到了。"
     menu:
         "怎么办？？？"
         "壮壮你不是会开车吗？要不抢辆车算了？":
-            # scene 09fight
+            scene bg fight1 with dissolve
             "壮壮模仿GTA5拦了辆车，拉开车门试图把司机拉出来。"
-            "没想到司机出来反手就是一个过肩摔把壮壮摔在车顶上一通殴打，万千儿见事不妙以武当亲传的太极拳法救人于危难之际。"
+            "没想到司机出来反手就是一个过肩摔把壮壮摔在车顶上一通殴打……"
+            "万千儿见事不妙以武当亲传的太极拳法救人于危难之际。"
+            scene bg fight2 with dissolve
             "你们三人最终在派出所待了一晚上 ，直到第二天清晨才和众人在港口汇合。"
             jump dj_103.s16port
             
@@ -124,6 +123,7 @@ label .s07street:
             jump .s09taxi
 
 label .s09taxi:
+    scene taxi night with fade
     "终于逐渐度过了这个堵死的桥。但这个导航似乎越走越奇怪了，韩韩发的定位emmmmmm..."
     "百度地图""到达目的地附近，导航结束。"
     "但是……此时出租处于一个导航上看不到路、车灯被环境的黑暗吞没的未知地点。你们和司机小哥都沉默了，沉默是今晚的康桥...."
@@ -140,6 +140,7 @@ label .s09taxi:
     jump .s11beach
 
 label .s11beach:
+    scene zs beach night with fade
     """
     寻声而去，原来大家都在下面的石滩上玩耍，好久不见，甚是想念。
     
@@ -148,7 +149,7 @@ label .s11beach:
     东极岛啊你人杰又地灵，太平洋的风儿最先吹到你
     
     东极岛东极岛，大陆最东的岛屿，海浪都来亲吻你，鱼儿都来拥抱你
-
+    
     ……
     
     尽管淘宝老板还没有告知明早船票是否购买成功，但和这样有趣的一群人在一起，不管是窝在舟山民宿，还是成功前往东极，都是也一样不枉此行吧。
@@ -181,7 +182,7 @@ label .s11beach:
 
 label .s12villa:
     "众人继续聊天，突然你接到了淘宝老板的短信，说明天船票已出票，按照你们要求是最早的一班。"
-    "最早的一班，那就是8：45开船，提前一小时登船那就是7点45开始检票，从民宿到码头如果畅通无阻大概是四十分钟的出租车程。"
+    "最早的一班，那就是8:45开船，提前一小时登船那就是7:45开始检票，从民宿到码头如果畅通无阻大概是四十分钟的出租车程。"
     menu:
         "你们准备什么时候起床？"
         "这个鸟不拉屎村，哪来的出租，我们可能需要四点起床，走到最近的公交站...":
@@ -202,11 +203,20 @@ label .s12villa:
     jump .s13rooom
 
 label .s13rooom:
-    scene bg villaroom
-    with fade
+    scene zs villa room1 with fade
+    "你回到房间，正和汪闲聊着有没有什么吃的，"
+    "突然发现床旁边的地板上出现了一只超级大的蜘蛛！"
+    image im_spider = im.FactorScale("images/zs/spider.png",0.2)
+    show im_spider:
+        xalign 0.4 yalign 1.2
+        ease 0.8 yalign 0.8
+        alignaround (0.3, 0.8)
+        linear 2.0 yalign 0.8 clockwise circles 2
+        linear 2.0 align (0.4, 1.2) knot (-0.2, 0.2) knot (0.5, 0.4)
+    
+    hide spider
 
-    "你回到房间，正和汪闲聊着有没有什么吃的，突然发现床旁边的地板上出现了一只超级大的蜘蛛！"
-    "小汪""啊！！！！！！"
+    "小汪""啊！！！！！！" with vpunch
     menu:
         "蜘蛛竟然还在到处乱爬！你怎么办？"
         "赶紧让汪呼叫卜前来救驾":

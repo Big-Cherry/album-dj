@@ -13,6 +13,14 @@
 
 default dunhuang_value = 0
 
+# 特殊图像
+
+image black = Solid("#000")
+
+# 常用转场
+
+define phototake = Fade(0.1, 0.0, 0.1)
+
 # 游戏在此开始。
 
 label start:

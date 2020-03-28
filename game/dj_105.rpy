@@ -13,10 +13,19 @@
 label dj_105:
 
 label .s68villa:
-    scene bg s68villa
-    with fade
+    show text "2018年10月5日" at truecenter with dissolve
+    pause 0.5
+    image time3 = Text("中午11:20", xalign=0.5, yalign=0.55)
+    show time3 with dissolve
+    pause 1.0
+
+    scene ghost room sleep with Fade(1.0, 0.0, 0.8)
+    "等睡醒已经是快十二点了，这次很幸运的是，你没有再陷入奇怪的梦境。"
+
+    scene ghost livingroom light with dissolve
     "离开小别墅前，你打算再次前往晚上发现奇怪花纹的那个角落里查看。"
     "靠近时你有些忐忑不安，等到了那里，却长舒一口气，那个角落，并没有什么奇怪的花纹！"
+    scene ghost door light with dissolve
     "但奇怪的是，等你回到储物间的门口，发现把手上的钥匙又一次不见了，门重新被上了锁。"
     me"大家有人把这上面的钥匙拿走了？"
     ming"拿走珍藏做纪念品吗？"
@@ -29,8 +38,7 @@ label .s68villa:
     jump .s69street
 
 label .s69street:
-    scene bg s69street
-    with fade
+    scene zs typhoon1 with fade
     "走出小别墅，你们才发觉台风真的要来了。"
     "外面下着大雨，狂风刮的大家东倒西歪，完全撑不住伞，甚至金蛋伞的龙骨都被风吹折了！"
     "这里似乎荒无人烟，在公交站等待了许久也没有一辆车，而且更糟糕的是，完全没有出租的踪影。"
@@ -40,6 +48,7 @@ label .s69street:
     yinyin"小明你不是之前有司机小哥的电话吗？"
     ming"对嗷，我差点都忘了，赶紧的安排上"
     lian"那我们不等公交算了，找个避风的地方等出租吧。"
+    scene zs typhoon2 with dissolve
     "众人于是朝前逆风而行，终于找到了一个小区停自行车的雨棚。"
     ming"小哥说凑四辆出租有点难，让我们耐心点等着，有消息告诉我们。"
     "于是冠军拿出手机，开始进入主播模式："
@@ -47,8 +56,7 @@ label .s69street:
     jump .s70taxi
 
 label .s70taxi:
-    scene bg s70taxi
-    with fade
+    scene taxi typhoon with fade
     "不知过了多久，出租小哥车队终于来了，我们依次上了车，前往舟山客运站。"
     "小哥""你们有没有感觉这个车在飘？"
     me"……"
@@ -111,7 +119,7 @@ label .s70taxi:
     jump .s71station
 
 label .s71station:
-    scene bg s71station
+    scene zs station with fade
     "在汽车站的众人喜出望外，闲聊间，旁边两位小姐姐问是否可以让他们也拼个车。"
     menu:
         "这时你们准备？"
@@ -129,13 +137,17 @@ label .s71station:
     jump .s72station
 
 label .s72station:
+    scene zs typhoon building with fade
     """
     台风愈发严重了，外面风雨交加，人几乎睁不开眼。
 
     路上各种回旋气流裹挟着落叶、垃圾之类，行道树都几乎直不起来。
 
-    沿着建筑的墙根，你们终于到了酒店门口，突然间从头顶上落下了许多白色的东西，就摔在你们刚才路过的地方！
+    沿着建筑的墙根，你们终于到了酒店门口。
     """
+
+    "突然间从头顶上落下了许多白色的东西，就摔在你们刚才路过的地方！" with vpunch
+    
     shou"我靠，这也太险了"
     """
     众人也唏嘘不已，定眼一看，原来是酒店高层的外围墙壁掉落了下来。
@@ -149,8 +161,7 @@ label .s72station:
     jump .s73nbstreet
 
 label .s73nbstreet:
-    scene bg s73nbstreet
-    with fade
+    scene nb street with fade
     "跟连南他们作别后，你们剩下的一行人还没想好今天晚上要去哪。"
     conway"和我在宁波的街头走一走污喔污喔，直到所有的灯都快要熄灭了也不停留..."
     han"打住，打住。我们今天晚上怎么搞？"
@@ -174,15 +185,14 @@ label .s73nbstreet:
             
     "大家纷纷露出敦煌本性支持这个决定。"
     conway"海底捞251号...排上了"
-    shou"那的排多久啊……"
+    shou"那得排多久啊……"
     han"没事，我们去KTV唱几个小时就行了，这家四小时欢唱才200块。"
     "众人""冲冲冲！"
     "……"
     jump .s74ktv
 
 label .s74ktv:
-    scene bg s74ktv
-    with fade
+    scene nb ktv with fade
     """
     你们来到KTV，这里的环境确实不错。
 
@@ -211,10 +221,10 @@ label .s74ktv:
 
             她秒回说：“好”。
 
-            于是你打了一辆出租车赶往宁波站，你见到了正准备进站的万千百惠，你气喘吁吁。
+            于是你打了一辆出租车赶往宁波站。
             """
-            scene bg station
-            with fade
+            scene nb station night with fade
+            "在宁波站前，你见到了正准备进站的万千百惠，你气喘吁吁。"
             wqbh"你还真来了？"
             me"是啊，我..."
             """
@@ -225,17 +235,17 @@ label .s74ktv:
 
             你想着这些，打了辆出租车回去了....
             """
-            scene bg s74ktv
-            with fade
+            scene nb ktv with fade
             
     "两点钟了，大家都困的不行了。"
     conway"还有三桌了！准备出发了！"
     yinyin"冲冲冲！"
     ming"快走快走"
+    "……"
     jump .s75hdl
 
 label .s75hdl:
-    scene bg s75hdl
+    scene nb hdl with fade
     "服务员把你们带到了座位上，照例还是牛油+番茄双锅底。"
     "这时，诺诺已经困的不行，蜷在角落里快要睡着的样子。"
     menu:
@@ -254,7 +264,7 @@ label .s75hdl:
 
     ming"唉算了让她睡吧，我们吃吧。"
     "她盖着服务员送来的毯子睡着了，不一会儿发出打鼾的声音。"
-    "菜很快就上来了，原本筋疲力尽的大家，这会儿居然都来了精神："
+    "菜很快就上来了，原本精疲力尽的大家，这会儿居然都来了精神："
     "一盘捞派滑牛肉本来需要煮五分钟，开始刚下去没到两分钟，小明就拿着筷子在锅里搅来搅去。"
     menu:
         "大家见此状也赶快下去捞，这时你："
@@ -272,6 +282,7 @@ label .s75hdl:
             "管他三七二十一，先搅着不夹起来，煮熟了才能吃。"
 
     "大家才不管你干什么，还泛着血色的肉片夹到碗里直接开吃。就这样，上来的一道道菜很快就光盘了。"
+    "……"
     "不知不觉凌晨三点半了，大家都吃累了，挺着肚子倒在座位上。"
     "韩韩往厕所去了，并发出预警："
     han"刚才吃的肉可能没煮熟，我肚子有点疼。"
@@ -303,8 +314,7 @@ label .s75hdl:
     jump .s76nbtower
 
 label .s76nbtower:
-    scene bg s76nbtower
-    with fade
+    scene nb tower with fade
     """
     你们打车来到了天一阁，可是因为太早了，居然没有开门！
 
@@ -345,6 +355,7 @@ label .s76nbtower:
     jump .s77nbtower
 
 label .s77nbtower:
+    scene nb tower mountain with fade
     "冠军突然猛地一下清醒了，开始蹦蹦跳跳地："
     conway"前面有个假山，我们爬上去吧！"
     "其他几个人还处在梦游状态，神志不清的。你本想推托，但只见冠军已经开始爬山了，其他人也不受控制地跟着冠军走。"
@@ -367,10 +378,10 @@ label .s77nbtower:
             $ dunhuang_value += 10
             "结果大家纹丝不动，反而把正准备上来的游客吓到了，他们嫌弃地看着你……"
 
-    shou"算了，别管他们了，让他们睡会，我们去逛逛吧。"
+    shou"算了，别管他们了，让他们睡会儿，我们去逛逛吧。"
     "于是你和兽兽把他们抛弃在这里，你们俩人去天一阁逛了。"
-    scene bg nbtower
-    with fade
+
+    scene nb tower with fade
     "天一阁院子并不大，你们虽然走的很慢但也不知不觉到了出口处，这才想起来还有几个“丧尸”留在入口那里着。"
     menu:
         "这时你："
@@ -394,8 +405,7 @@ label .s77nbtower:
     jump .s78taxi
 
 label .s78taxi:
-    scene bg taxi
-    with fade
+    scene taxi day with fade
     # play music 《后会无期》
     """
     去往火车站意味着离别的时刻要来了。
@@ -433,7 +443,7 @@ label .s78taxi:
     jump .s79station
 
 label .s79station:
-    scene bg s79station
+    scene nb station day with fade
     "气喘吁吁地跑道宁波站，冠军和小明赶紧去找取票机，正准备跑过去。诺诺突然叫住了他们。"
     nuo"你们看！"
     nuo"宁波到南京，14:32开，晚点40分钟。"
@@ -442,17 +452,16 @@ label .s79station:
     nuo"你看，跟着我会有好运的！"
     conway"螺旋稳啊！"
     "你们庆幸着这趟旅程终结之时居然还有幸运发生，大家取完票朝候车厅走去。"
+
+    scene nb station photo with fade
     "大家坐在座位上，安安静静地，诺诺趴在行李箱上睡着了。"
     conway"我们来合个影吧！记录一下这趟不凡之行。"
     "3、2、1！"
     # 拍照音效
-    # 照片
-    scene bg photo
-    with fade
+    scene nb station photo with phototake
     "照片定格下了这个时刻。"
 
-    scene bg s79station
-    with fade
+    scene nb station plat with Fade(2.0, 0.5, 1.5)
     "去往南京的火车和去往北京、天津的火车都开始检票了。你的车也还有十分钟就要发车了。大家相互挥手作别。"
     conway"下次再见！"
     ming"下次见，拜拜！"
