@@ -83,6 +83,7 @@ label .s16port:
 
         "舟山到东极也不过是两个多小时船程，不如我们一起游过去吧":
             $ dunhuang_value += 30
+            scene dj swim with fade
             "你们一行十多人，经过十个小时的游泳，终于抵达了东极岛。"
             "当地媒体听说了你们的英勇行为，前来采访你们："
             $ renpy.music.set_pause(True, channel='music')
