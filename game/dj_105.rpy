@@ -39,6 +39,7 @@ label .s68villa:
 
 label .s69street:
     scene zs typhoon1 with fade
+    play music must_survive fadein 2.0
     "走出小别墅，你们才发觉台风真的要来了。"
     "外面下着大雨，狂风刮的大家东倒西歪，完全撑不住伞，甚至金蛋伞的龙骨都被风吹折了！"
     "这里似乎荒无人烟，在公交站等待了许久也没有一辆车，而且更糟糕的是，完全没有出租的踪影。"
@@ -120,7 +121,7 @@ label .s70taxi:
 
 label .s71station:
     scene zs station with fade
-    "在汽车站的众人喜出望外，闲聊间，旁边两位小姐姐问是否可以让他们也拼个车。"
+    "在汽车站的众人喜出望外，闲聊间，旁边两位小姐姐问是否可以让她们也拼个车。"
     menu:
         "这时你们准备？"
         "救人一命胜造七级浮屠，刚好还有两个空位，上吧":
@@ -158,10 +159,12 @@ label .s72station:
 
     终于，经过两小时的车程，你们到达了宁波市区，在吃过小杨生煎之后，车次在今天的连南等人，与众人分手离去。
     """
+    stop music fadeout 2.0
     jump .s73nbstreet
 
 label .s73nbstreet:
     scene nb street with fade
+    play music melody_of_night_17 fadein 2.0
     "跟连南他们作别后，你们剩下的一行人还没想好今天晚上要去哪。"
     conway"和我在宁波的街头走一走污喔污喔，直到所有的灯都快要熄灭了也不停留..."
     han"打住，打住。我们今天晚上怎么搞？"
@@ -402,17 +405,20 @@ label .s77nbtower:
     me"算了，我们找个地方吃饭吧，早点去火车站，免得又误车了，毕竟今天诺诺也在。"
     nuo"感觉有被冒犯。"
     "你们叫了两辆车，找了下最近的商圈，去吃了点宁波菜当午饭。"
+    stop music fadeout 2.0
     jump .s78taxi
 
 label .s78taxi:
     scene taxi day with fade
-    # play music 《后会无期》
+    play music hhwq fadein 2.0
     """
     去往火车站意味着离别的时刻要来了。
 
     这趟旅程很短暂，又充满了惊喜、惊吓、奇遇、冒险，还有一些神秘的东西...但和这群人在一起，一切都顺利解决，螺旋稳。
 
-    从天南海北聚集到这里的人又将要回到各自的地方去，可能以后很难再有机会和这样一群人做这样冒险的事情了，你戴上耳机，应景地响起了邓紫棋的《后会无期》。
+    从天南海北聚集到这里的人又将要回到各自的地方去，可能以后很难再有机会和这样一群人做这样冒险的事情了……
+    
+    你戴上耳机，应景地响起了邓紫棋的《后会无期》。
 
     车上有些堵，但好在留的时间很充裕。
     
@@ -457,7 +463,7 @@ label .s79station:
     "大家坐在座位上，安安静静地，诺诺趴在行李箱上睡着了。"
     conway"我们来合个影吧！记录一下这趟不凡之行。"
     "3、2、1！"
-    # 拍照音效
+    play sound take_photo
     scene nb station photo with phototake
     "照片定格下了这个时刻。"
 

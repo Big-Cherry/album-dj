@@ -20,6 +20,22 @@ image black = Solid("#000")
 # 常用转场
 
 define phototake = Fade(0.1, 0.0, 0.1)
+define fade = Fade(1.0, 1.0, 1.0)
+
+# 注册歌唱通道
+init python:
+    renpy.music.register_channel('sing', mixer='music', loop=False, stop_on_mute=True)
+
+# 游戏启动时的Splash界面
+
+label splashscreen:
+    scene black
+    image text0 = Text("BigCherry Present", size=35)
+    show text0 at truecenter with fade
+    pause 0.8
+    scene splash with fade
+    pause
+    return
 
 # 游戏在此开始。
 

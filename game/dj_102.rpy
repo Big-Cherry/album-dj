@@ -14,6 +14,7 @@ label dj_102:
 
 label .s03apartment:
     scene black with fade
+    play music be_ordinary_piano fadeout 2.0 fadein 2.0
 
     show text "2018年10月2日" at truecenter with dissolve
     pause 1
@@ -22,17 +23,19 @@ label .s03apartment:
     "终于到了约定在舟山集合的日子。"
     menu:
         "你准备怎么出行呢？"
-        # TODO: 这里最好插不同的图
         "硬卧到宁波":
+            scene bg train bed with dissolve
             "你和韩韩、小汪同行，但是只有你买到了卧铺票。"
             "你假惺惺地说把卧铺让给女孩子，没想到小汪一口答应，于是你只好和韩韩一起硬座坐到了宁波车站。"
             jump .s04bus
         "在宁波中转":
+            scene bg lyd with dissolve
             "你和连南小萝卜买了北京飞往宁波的机票。"
             "由于起飞时间很早，你们前一天晚上在清华集合，然后去吃了柳叶刀烧烤。柳叶刀的招牌菜刀拍黄瓜可真是好吃！你们一口气吃了三盘。"
             "晚上连南安排你们到了学生会活动室，你和小萝卜睡行军床，竟然把行军床睡塌了。终于混到凌晨四点，一起前往机场乘飞机。"
             jump .s04bus
         "在绍兴中转":
+            scene bg luxun house with dissolve
             "你和冠军、诺诺、小明一起去了绍兴鲁迅故居。"
             "然而那里人太多了。为了防止误车，你们只好放弃参观去了火车站。"
             jump .s04bus
@@ -74,8 +77,13 @@ label .s06street:
             
         "没办法了，边走边看吧，可能走过桥就有人接单了。":
             "你们还是图样！显然过桥的出租车肯定没有空车啊！"
-            "你们只好提着五袋东西走了八公里，到民宿的时候已经凌晨了，大家都累瘫了。"
-            jump dj_103.s14villa
+            "你们只好提着五袋东西走了八公里，到民宿的时候已经凌晨了。"
+            "大家都累瘫了，也没有心情再去旁边的沙滩上玩儿，都各自回房间休息了。"
+            if dj_withgirl:
+                jump dj_girl.gs01room
+            else:
+                play music happy_1 fadeout 2.0 fadein 2.0
+                jump .s13room
         "没办法了，再等等吧，总不能走过去吧":
             pass
             
@@ -115,7 +123,7 @@ label .s07street:
             if dj_withgirl:
                 jump dj_girl.gs01room
             else:
-                jump .s13rooom
+                jump .s13room
 
         "先把滴滴的目的地选到我这这个洗浴城吧。":
             "果然目的地改到洗浴城就被接单了，我套路还是深啊。"
@@ -141,9 +149,10 @@ label .s09taxi:
 
 label .s11beach:
     scene zs beach night with fade
+    "寻声而去，原来大家都在下面的石滩上玩耍，好久不见，甚是想念。"
+    stop music fadeout 2.0
+    play sing dj_island_1 fadein 1.0
     """
-    寻声而去，原来大家都在下面的石滩上玩耍，好久不见，甚是想念。
-    
     不知道谁把音箱打开了，你们一起纵声歌唱：
     
     东极岛啊你人杰又地灵，太平洋的风儿最先吹到你
@@ -154,12 +163,14 @@ label .s11beach:
     
     尽管淘宝老板还没有告知明早船票是否购买成功，但和这样有趣的一群人在一起，不管是窝在舟山民宿，还是成功前往东极，都是也一样不枉此行吧。
     """
-
+    stop sing fadeout 1.0
+    
     if dj_withgirl:
         jump dj_girl.gs01room
 
     "正在热闹着，突然发现原本坐在身边的卜和汪两人不见了。"
     "众人疑惑，终于发现这两个人竟然偷偷跑到上面的入口处坐着，似乎在窃窃私语聊着什么……"
+    play music happy_1 fadein 2.0
     menu:
         "这时你："
         "我们跑过去一言不发坐在他们周围把他们围住吧，形成大π键":
@@ -177,6 +188,7 @@ label .s11beach:
             ming"卜文添！"
             bwt"干啥"
             "众人一起打开了闪光灯拍照。"
+            play sound take_photo
             bwt"你们有毒吧！"
             jump .s12villa
 
@@ -200,11 +212,11 @@ label .s12villa:
     "明老板给出租小哥打了电话，很快确定了明天5点半约四辆出租过来。"
     conway"不愧是外联部长！正部级干部就是不一样！"
     "夜已深，大家约定明天五点起床，五点半在门口集合，各自分了房间，回去睡觉。"
-    jump .s13rooom
+    jump .s13room
 
-label .s13rooom:
+label .s13room:
     scene zs villa room1 with fade
-    "你回到房间，正和汪闲聊着有没有什么吃的，"
+    "你回到房间，正和小汪闲聊着有没有什么吃的，"
     "突然发现床旁边的地板上出现了一只超级大的蜘蛛！"
     image im_spider = im.FactorScale("images/zs/spider.png",0.2)
     show im_spider:
@@ -254,4 +266,6 @@ label .s13rooom:
            bwt"连南都已经脱光光睡着了，我还是在这陪着你们聊天吧。"
            "于是你跟他们俩尴尬的聊着天，时刻感觉自己在发光发热……"
            "混过了一夜，不知道什么时候睡着了，直到被闹铃闹醒发现三人竟然挤在一张床上。"
+
+    stop music fadeout 2.0       
     jump dj_103.s14villa

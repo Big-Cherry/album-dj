@@ -23,6 +23,8 @@ label .s14villa:
 
     scene zs morning with fade
 
+    play music journey fadein 2.0
+
     ming"出租车已经在路口那等候了，大家赶快点吧。"
     lian"走走，凑齐四个人就上车出发吧，千万别误船了。"
     shou"那个啥，诺诺还在化妆，大家先走吧……"
@@ -61,7 +63,7 @@ label .s16port:
     "老板""你们自己误了船，出票信息就写的6.30，返程票已经下单了，那部分的钱也不可能退的。"
     me"谁知道你最上面这个6.30是什么意思，正常人写时间不都是6:30吗？"
     "老板""那没办法了。"
-    # 可加入挂电话音效
+    play sound hang_up
     "随即老板挂了电话，再也打不通。"
     default menuset = set()
     menu .s16port_ques:
@@ -77,14 +79,25 @@ label .s16port:
         "算了自认倒霉吧，到舟山找个民宿打牌也挺好":
             $ dunhuang_value -= 10
             "你们在舟山找到了一家价格合适的小别墅。"
+            han"现在就去别墅也太早了吧，要不我们找个地方去逛逛？"
+            ming"我昨天看到采购的那个商城旁边好像有一家密室逃脱，可以去玩一下。"
+            "众人纷纷支持这个决定，于是打车去了商圈。"
+            scene zs mall with fade
+            "虽然舟山是个小地方，但是这个商圈里人可不少。"
+            "大家玩完密室逃脱，又去看了场电影，虽然没能上岛，但玩得也很开心。"
             jump dj_104.s57taxi
 
         "舟山到东极也不过是两个多小时船程，不如我们一起游过去吧":
             $ dunhuang_value += 30
+            scene dj swim with fade
             "你们一行十多人，经过十个小时的游泳，终于抵达了东极岛。"
             "当地媒体听说了你们的英勇行为，前来采访你们："
+            $ renpy.music.set_pause(True, channel='music')
             "记者""你们为何一定要登岛呢？"
+            play sing dj_island_2 fadein 1.0
             "你们一起唱：东极岛啊东极岛啊 除了这里 我们哪儿都不想去……"
+            stop sing fadeout 1.0
+            $ renpy.music.set_pause(False, channel='music')
             jump .s24villa
 
 label .s17port:
@@ -277,13 +290,17 @@ label .s22ship:
     """
     scene ship go3 with fade
 
+    "不知过了多久，船终于靠岸了，你们纷纷下船，民宿老板娘过来接你们。"
+    "跟着老板娘，你们走在渔村的小路上，唱着东极岛岛歌："
+    play sing dj_island_3 fadein 1.0
     """
-    不知过了多久，船终于靠岸了，你们纷纷下船，民宿老板娘过来接你们。
+    东极岛 东极岛 我们不会离开你
     
-    跟着老板娘，你们走在渔村的小路上，唱着东极岛岛歌：“东极岛 东极岛 我们不会离开你 生是你的老百姓 死是你的小精灵……”
+    生是你的老百姓 死是你的小精灵……”
 
     ……
     """
+    stop sing fadeout 1.0
     jump .s24villa
 
 label .s24villa:
@@ -307,7 +324,17 @@ label .s24villa:
             $ dunhuang_value += 20
             "你们被渔民用渔网救了起来，当地媒体听说了你们的英勇行为，前来采访："
             "记者""请问你们为何一定要在东极岛亲自下海呢？"
-            "你们一起唱：“东极岛啊东极岛啊 除了这里 我们哪儿都不想去……”"
+            $ renpy.music.set_pause(True, channel='music')
+            play sing dj_island_3 fadein 1.0
+            """
+            你们一起唱：
+            
+            东极岛 东极岛 我们不会离开你
+            
+            生是你的老百姓 死是你的小精灵……
+            """
+            stop sing fadeout 1.0
+            $ renpy.music.set_pause(False, channel='music')
             jump .s25restaurant
 
 label .s25restaurant:
@@ -341,16 +368,18 @@ label .s25restaurant:
     nuo"我去，都三点了"
     conway"我们到石头那里拍个合影吧。"
 
-    # 插入拍照音效
     scene dj stone photo with fade
     "众人进行了“东极”游客打卡沙雕合影，随后回民宿睡觉。"
+    play sound take_photo
     scene dj stone photo with phototake
     pause 2
+    stop music fadeout 2.0
     scene black with Fade(2.0, 2.0, 0.0)
     jump .s26villa
 
 label .s26villa:
     scene dj villa kitchen1 with fade
+    play music melody_of_night_23 fadein 2.0
     """
     一觉睡的昏天暗地，起床都快六点了。
 
@@ -394,7 +423,7 @@ label .s28villa:
             
         "不能浪费粮食，死撑也要撑进去！":
             $ dunhuang_value += 10
-            "你们又坐下来继续吃，人多力量大，大家齐心协力把一盆分了，但还是剩下半盆。"
+            "你们又端起碗继续吃，人多力量大，大家齐心协力把一盆分了，但还是剩下半盆。"
             
         "唉，只能倒掉了，没办法":
             $ dunhuang_value -= 10
@@ -404,6 +433,7 @@ label .s28villa:
     "昏暗的灯光下，你看到这种景象感觉很美好。"
     scene dj villa photo with fade
     "收拾完后已经十点半了，你们一起在桃旗前拍了合影。"
+    play sound take_photo
     scene dj villa photo with phototake
     jump .s29villa
 
@@ -434,9 +464,11 @@ label .s29villa:
             "大部分人和你持有相同的观点：台风即将来袭，如果他动手脚导致我们困在岛上，之后投诉他，甚至告他，他需要赔偿的就多了。"
             
     "最终你们决定，跟老板说明情况，并以这个理由反威胁他，量他也不敢做手脚，之后不再接老板的电话。"
+    stop music fadeout 2.0
 
 label .s30villa:
     scene dj villa uno with dissolve
+    play music excuse_me fadein 2.0
     "严肃的话题说完了，连南拿出祖传的两大盒UNO，这次有十几个人一起打，从来没有这么多过。"
     "都是熟练玩家了，游戏速度如同快了二倍速一般，完全应接不暇。"
     "不知过了多久，疯狂加四已经是老套路了，大家有点困了。"
@@ -451,6 +483,7 @@ label .s30villa:
             $ dunhuang_value -= 20
             "大家说你不行，看日出前喊你。"
             "于是你去睡觉了，直到第二天凌晨四点多被喊醒。"
+            stop music fadeout 2.0
             jump dj_104.s39villa
 
         "对了，我记得上次淫淫说有个新玩法，我们可以试试！":
@@ -489,12 +522,12 @@ label .s30villa_tmp:
 
     "欢声笑语中，大家都不敢说话，但又憋不住，随着大家手里的牌越来越多，全场笑作一片。"
     dan"坑爹小明，艾要明牌了！大家别看！"
-    "艾是什么鬼？靠原来是英语啊"
+    "艾是什么鬼？"
+    "靠原来是英语啊……"
     "真是一场诡异的污诺局！牌组的牌都几乎快被大家拿在手上，甚至可以比谁牌多了。"
 
     if dj_withgirl:
-        # FIXME: This value need discussion
-        if dj_girl_opinion > 80:
+        if dj_girl_opinion >= 50:
             jump dj_girl.gs12message
 
         else:
@@ -519,8 +552,10 @@ label .s31love:
     conway"喵喵喵？哪来的爱情？"
     shou"关你p事，你继续主持人吧"
     "大家一齐把目光投向了在角落自闭的小天。"
+    stop music fadeout 2.0
     
     scene dj villa love2 with Fade(1.0, 0.3, 1.0)
+    play music melody_of_night_3
     "大家安静围坐在房间里，聚光灯照在本次节目的两位主角——小茶和小天身上。"
     "舒缓的配乐响起，小茶低头羞涩一笑。"
     tea"啊？主角是我嘛……那你们想听什么呢？"
@@ -536,6 +571,8 @@ label .s31love:
         "晚安，老子去睡觉了，你们都猝死吧，再见.jpg":
             $ dunhuang_value -= 20
             "于是你去睡觉了，后来众人告诉你你错过了许多精彩的故事……"
+            stop music fadeout 2.0
+            scene black with fade
             jump dj_104.s39villa
 
 label .s32summer:
@@ -553,24 +590,24 @@ label .s32summer:
     menu:
         "如果是你，会期待谁的表白呢？"
         "帅气能干的小殷":
-            call .s33ying
+            call .s33ying from _call_dj_103_s33ying
             "众人""那小陶为什么告白呢？"
-            call .s34tao
+            call .s34tao from _call_dj_103_s34tao
             jump .s35campus
 
         "温柔细心的小陶":
-            call .s34tao
+            call .s34tao from _call_dj_103_s34tao_1
             "众人""那这另一个身影是小殷了？"
             tea"嗯……"
-            call .s33ying
+            call .s33ying from _call_dj_103_s33ying_1
             jump .s35campus
             
         "小孩子才做选择，成年人全都要":
             $ dunhuang_value += 20
             tea"哎，谁说不是呢。我先说小殷吧。"
-            call .s33ying
+            call .s33ying from _call_dj_103_s33ying_2
             "众人""那小陶为什么告白呢？"
-            call .s34tao
+            call .s34tao from _call_dj_103_s34tao_2
             jump .s35campus
 
 
@@ -710,6 +747,7 @@ label .s37love:
     nuo"那如果你们都觉得在这段关系中所收获，那我们觉得也可以了吧..."
     "小茶无辜的眼睛里浮上一层水雾，她低下头，双肩轻轻耸动，突然拉开房门头也不回地冲了出去。小天紧紧跟上，两人先后没入黑暗里..."
     
+    stop music fadeout 2.0
     scene black with fade
     "房间里陷入一阵短暂的沉寂。"
     lian"我们这样逼问是不是有点凶？"

@@ -16,20 +16,27 @@ label dbgend:
     "好吧，看来前面还没有开发完呢，下次再来看吧。"
     return
 
+label display_value:
+    "你的敦煌值是：[dunhuang_value]，超过了99%%的玩家，真NB！"
+    return
+
 label dj_endings:
 label .end01: # By Alan Li
-    # 跳过回忆
-    # TODO: need background
+    scene bg end01_1 with fade
     "你的毕业论文得了优秀。"
+    pause
+    scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
-    return
+    scene black with Fade(3.0, 1.0, 0.0)
+    jump display_value
 
 label .end02: # By Wentian Bu
     # 咕咕结局
     # TODO: need background
     "你咕咕了群友们，弄哭了冠军。"
     "End 02 - 梨花带雨的冠军"
-    return
+    scene black with Fade(3.0, 1.0, 0.0)
+    jump display_value
 
 label .end03: # By Alan Li
     # 逃离失败成为难民
@@ -37,29 +44,33 @@ label .end03: # By Alan Li
     "你们逃离失败被困在舟山客运站，过上了难民生活。"
     "End 03 - 难民的麦当劳"
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
 
 label .end04: # By Conway Tan
-    # 特别关注音效
-    "特别关注""万千儿：❤❤❤"# 这三个字符显示不出来，可能需要插图
-    "特别关注""万千儿：[[分享歌曲]一见钟情"
+    stop music fadeout 2.0
+    play sound notify
+    "特别关注""万千儿：{image=images/other/heart.png}"
+    play sound notify
+    "特别关注""万千儿：{image=images/other/yjzq.png}"
     "难道……她看出来了我的心思？这一切来得太突然了……"
     "还是试探性回复一下吧……"
+    play music express_love fadein 1.0
     me"等等我"
+    play sound notify
     "特别关注""万千儿：好"
     "嗯……找个借口先走吧，顺便叫辆滴滴。"
     me"我有个同学家在宁波，他刚才邀请我去玩儿。"
     conway"啊？那你不和我们走了？"
     me"嗯，我已经把票给改了。"
     yinyin"好吧，台风来了，你路上小心。"
-    # 上车场景
+
     scene taxi night with fade
     "还是看看票吧，兴许运气好还有剩的呢？"
     "？！还有一张票！天助我也！管他呢，买了再说！"
-    # 到达宁波站场景
+
     scene nb station night with fade
     "车快开了，得赶快了。" 
-    # 脚步声
+    play sound run_step
     wqbh"桃神！桃神！" with vpunch
     wqbh"桃神你真的来了啊！"
     wqbh"诶桃神你拉我去哪儿啊"
@@ -69,7 +80,9 @@ label .end04: # By Conway Tan
     scene bg end04 with fade
     "你和万千儿一起前往了珠海，这一路上你们聊了很多！你们感觉和彼此情投意合，恭喜你们在一起了！"
     "End 04 - 意外的美好"
-    return
+    stop music fadeout 3.0
+    scene black with Fade(3.0, 1.0, 0.0)
+    jump display_value
 
 
 label .end05:
@@ -85,7 +98,7 @@ label .end05:
     me"小杰瑞？你又是哪冒出来的"
     "小杰瑞""我们没买到座位，只有无座了，只能在厕所门槛混了一晚上，太求惨了..."
 
-    play sound "audio/sound/qqddd.mp3"
+    play sound notify
     "群通知""Conway邀请你加入群聊"
     "怎么还是这些熟人？"
     me"@Conway 这又建了个什么群？"
@@ -95,10 +108,11 @@ label .end05:
 
     "End 05 - 行进的列车"
     scene black with Fade(3.0, 1.0, 0.0)
-    return 
+    jump display_value
 
 label .g_end06:
     scene dj villa room day with fade
+    play music everything_settled fadein 3.0
     """
     你睁开眼睛，发现天已经大亮，一看手机快十点了。昨天晚上居然和小茶在一张床上和衣睡着了。
 
@@ -188,17 +202,19 @@ label .g_end06:
 
     Good Ending - 徐徐展开的画卷
     """
+    stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
 
 label .g_end07:
-    scene dj villa room day with Fade(0.8, 1.0, 2.0)
+    scene dj villa room day with Fade(1.0, 1.0, 2.0)
+    play music lonely_walk fadein 2.0
     "门外传来一群人凌乱的脚步声和说话声，还有人砰砰砰地敲门。"
     "你迷迷糊糊起床打开门，发现是连南。"
     lian"你醒啦，我们四点多看日出，敲你们门敲了半天都没反应。二人世界怎么样？"
     me"有毒吧，啥都没有。咋了？"
     lian"就跟你说一声，你们的票是十一点的千万别睡过了。困死爸爸了。"
-    lian"这会都十点了，你们别睡了，当心误船。"
+    lian"这会儿都十点了，你们别睡了，当心误船。"
     me"好，我知道了。"
     "回到房间里，发现小茶刚才也醒了，正在看手机。"
     tea"啊！他们今天早晨去看日出了？为啥没人跟我们说啊。"
@@ -224,7 +240,7 @@ label .g_end07:
 
     还是咬咬牙吧，上船就不冷了。
     """
-    me"我们走快点吧，十一点的船票，时间有点紧张了、"
+    me"我们走快点吧，十一点的船票，时间有点紧张了。"
     tea"可是我的行李好重啊。"
     "你松开了牵着她的左手，把她的背包背在背上，然后又接过了箱子。"
 
@@ -290,12 +306,14 @@ label .g_end07:
 
     Normal Ending - 埋藏心底的感情
     """
+    stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
 
 
 label .g_end08:
-    scene dj villa room day with Fade(0.8, 1.0, 2.0)
+    scene dj villa room day with Fade(1.0, 3.0, 3.0)
+    play music fragile_tenderness fadein 2.0
     "你迷迷糊糊听到一阵嘈杂，睁开眼睛发现是众人回来了。"
     me"你们干什么去啊？"
     zhuang"你才醒啊，我们早晨四点多本来准备叫你，"
@@ -344,7 +362,8 @@ label .g_end08:
     tea"刚才我社长通知我，后天的辩论赛有一名辩手临时有事参加不了，需要我尽快赶回去替补。"
     tea"我已经改签了今晚九点返程的车票，时间有点紧张，我就先走了。"
     me"好，需要我送你去车站吗？"
-    tea"不用了，我刚才叫了辆滴滴，直接坐车去就行了。现在也不早了，台风快来了，你也尽快回酒店休息吧。"
+    tea"不用了，我刚才叫了辆滴滴，直接坐车去就行了。"
+    tea"现在也不早了，台风快来了，你也尽快回酒店休息吧。"
     me"那你路上注意安全，到车站了在群里发个消息，这样大家也放心。"
     tea"嗯嗯。"
     """
@@ -358,5 +377,6 @@ label .g_end08:
 
     Bad Ending - 渐行渐远的背影
     """
+    stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
