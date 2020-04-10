@@ -21,15 +21,16 @@ define gui.show_name = True
 
 ## 游戏版本号。
 
-define config.version = "0.3"
+define config.version = "0.4"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
 
 define gui.about = _p("""
-这是大樱桃团队游戏纪念册的Demo版本。
 
-大樱桃纪念册工作组  Present
+大樱桃纪念册工作组  呈献
+
+这是大樱桃纪念册的第一部分。
 
 编剧：全群弟弟  最凶担当  误车担当  活动鸽鸽
 
@@ -86,6 +87,8 @@ define config.intra_transition = dissolve
 
 define config.after_load_transition = fade
 
+## Splash 结束后进入菜单的转场
+define config.end_splash_transition = fade
 
 ## 在游戏结束之后进入主菜单时使用的转场。
 

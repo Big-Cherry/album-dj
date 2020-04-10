@@ -16,6 +16,10 @@ label dbgend:
     "好吧，看来前面还没有开发完呢，下次再来看吧。"
     return
 
+label display_value:
+    "你的敦煌值是：[dunhuang_value]，超过了99%%的玩家，真NB！"
+    return
+
 label dj_endings:
 label .end01: # By Alan Li
     scene bg end01_1 with fade
@@ -23,14 +27,16 @@ label .end01: # By Alan Li
     pause
     scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
-    return
+    scene black with Fade(3.0, 1.0, 0.0)
+    jump display_value
 
 label .end02: # By Wentian Bu
     # 咕咕结局
     # TODO: need background
     "你咕咕了群友们，弄哭了冠军。"
     "End 02 - 梨花带雨的冠军"
-    return
+    scene black with Fade(3.0, 1.0, 0.0)
+    jump display_value
 
 label .end03: # By Alan Li
     # 逃离失败成为难民
@@ -38,7 +44,7 @@ label .end03: # By Alan Li
     "你们逃离失败被困在舟山客运站，过上了难民生活。"
     "End 03 - 难民的麦当劳"
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
 
 label .end04: # By Conway Tan
     stop music fadeout 2.0
@@ -76,7 +82,7 @@ label .end04: # By Conway Tan
     "End 04 - 意外的美好"
     stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
 
 
 label .end05:
@@ -102,7 +108,7 @@ label .end05:
 
     "End 05 - 行进的列车"
     scene black with Fade(3.0, 1.0, 0.0)
-    return 
+    jump display_value
 
 label .g_end06:
     scene dj villa room day with fade
@@ -198,7 +204,7 @@ label .g_end06:
     """
     stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
 
 label .g_end07:
     scene dj villa room day with Fade(1.0, 1.0, 2.0)
@@ -302,7 +308,7 @@ label .g_end07:
     """
     stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
 
 
 label .g_end08:
@@ -373,4 +379,4 @@ label .g_end08:
     """
     stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
-    return
+    jump display_value
