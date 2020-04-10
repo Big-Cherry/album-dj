@@ -18,9 +18,10 @@ label dbgend:
 
 label dj_endings:
 label .end01: # By Alan Li
-    # 跳过回忆
-    # TODO: need background
+    scene bg end01_1 with fade
     "你的毕业论文得了优秀。"
+    pause
+    scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
     return
 
@@ -42,9 +43,9 @@ label .end03: # By Alan Li
 label .end04: # By Conway Tan
     stop music fadeout 2.0
     play sound notify
-    "特别关注""万千儿：❤❤❤"# 这三个字符显示不出来，可能需要插图
+    "特别关注""万千儿：{image=images/other/heart.png}"
     play sound notify
-    "特别关注""万千儿：[[分享歌曲]一见钟情"
+    "特别关注""万千儿：{image=images/other/yjzq.png}"
     "难道……她看出来了我的心思？这一切来得太突然了……"
     "还是试探性回复一下吧……"
     play music express_love fadein 1.0
@@ -56,11 +57,11 @@ label .end04: # By Conway Tan
     conway"啊？那你不和我们走了？"
     me"嗯，我已经把票给改了。"
     yinyin"好吧，台风来了，你路上小心。"
-    # 上车场景
+
     scene taxi night with fade
     "还是看看票吧，兴许运气好还有剩的呢？"
     "？！还有一张票！天助我也！管他呢，买了再说！"
-    # 到达宁波站场景
+
     scene nb station night with fade
     "车快开了，得赶快了。" 
     play sound run_step

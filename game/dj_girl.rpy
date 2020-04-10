@@ -144,7 +144,7 @@ label .gs03room:
 label .gs04sos:
     python:
         if not renpy.music.is_playing(channel='music'):
-            renpy.music.play("audio/bgm/happy_1.mp3", channel='music', fadein=2.0)
+            renpy.music.play("audio/bgm/happy_1.ogg", channel='music', fadein=2.0)
 
     "正在玩手机，突然QQ上小茶突然来找你："
     tea"哥哥我好害怕，房间里刚才有个大蜘蛛在到处乱爬，我们不敢打。"
