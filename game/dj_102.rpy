@@ -14,6 +14,7 @@ label dj_102:
 
 label .s03apartment:
     scene black with fade
+    play music be_ordinary_piano fadeout 2.0 fadein 2.0
 
     show text "2018年10月2日" at truecenter with dissolve
     pause 1
@@ -141,9 +142,10 @@ label .s09taxi:
 
 label .s11beach:
     scene zs beach night with fade
+    "寻声而去，原来大家都在下面的石滩上玩耍，好久不见，甚是想念。"
+    stop music fadeout 2.0
+    play sing dj_island_1 fadein 1.0
     """
-    寻声而去，原来大家都在下面的石滩上玩耍，好久不见，甚是想念。
-    
     不知道谁把音箱打开了，你们一起纵声歌唱：
     
     东极岛啊你人杰又地灵，太平洋的风儿最先吹到你
@@ -154,12 +156,14 @@ label .s11beach:
     
     尽管淘宝老板还没有告知明早船票是否购买成功，但和这样有趣的一群人在一起，不管是窝在舟山民宿，还是成功前往东极，都是也一样不枉此行吧。
     """
-
+    stop sing fadeout 1.0
+    
     if dj_withgirl:
         jump dj_girl.gs01room
 
     "正在热闹着，突然发现原本坐在身边的卜和汪两人不见了。"
     "众人疑惑，终于发现这两个人竟然偷偷跑到上面的入口处坐着，似乎在窃窃私语聊着什么……"
+    play music happy_1 fadein 2.0
     menu:
         "这时你："
         "我们跑过去一言不发坐在他们周围把他们围住吧，形成大π键":
@@ -177,6 +181,7 @@ label .s11beach:
             ming"卜文添！"
             bwt"干啥"
             "众人一起打开了闪光灯拍照。"
+            play sound take_photo
             bwt"你们有毒吧！"
             jump .s12villa
 
@@ -254,4 +259,6 @@ label .s13rooom:
            bwt"连南都已经脱光光睡着了，我还是在这陪着你们聊天吧。"
            "于是你跟他们俩尴尬的聊着天，时刻感觉自己在发光发热……"
            "混过了一夜，不知道什么时候睡着了，直到被闹铃闹醒发现三人竟然挤在一张床上。"
+
+    stop music fadeout 2.0       
     jump dj_103.s14villa

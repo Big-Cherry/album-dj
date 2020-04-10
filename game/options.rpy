@@ -21,7 +21,7 @@ define gui.show_name = True
 
 ## 游戏版本号。
 
-define config.version = "0.2"
+define config.version = "0.3"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
@@ -84,12 +84,12 @@ define config.intra_transition = dissolve
 
 ## 载入游戏后使用的转场。
 
-define config.after_load_transition = None
+define config.after_load_transition = fade
 
 
 ## 在游戏结束之后进入主菜单时使用的转场。
 
-define config.end_game_transition = None
+define config.end_game_transition = fade
 
 
 ## 用于控制在游戏开始标签不存在时转场的变量。作为替代，在显示初始化场景后使用

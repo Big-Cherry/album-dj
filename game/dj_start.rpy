@@ -11,6 +11,8 @@
 
 label dj_start:
 
+scene black with Fade(0.5, 0.5, 0.5)
+
 image text1 = Text("生是你的老百姓", xalign=0.5, yalign=0.45, size=30)
 image text2 = Text("死是你的小精灵", xalign=0.5, yalign=0.55, size=30)
 
@@ -30,13 +32,11 @@ jump .s01room
 
 label .s01room:
 
-    # play music "audio/bgm/main.mp3"
+    play music home
 
     show text "2020年3月9日" at truecenter with dissolve
     pause 1
 
-    # 显示一个背景。此处默认显示占位图，但您也可以在图片目录添加一个文件
-    # （命名为“bg room.png”或“bg room.jpg”）来显示。
     scene home room with fade
 
     "你正在家中赶着毕业论文……"
@@ -46,11 +46,11 @@ label .s01room:
 
     "啊！？？？难道我感染了新冠病毒？妈妈，救我~~"
 
-    scene home room with Fade(0.0, 0.5, 3.5, color="#000")
+    scene home room with Fade(0.0, 1.0, 3.5, color="#000")
     
     "嗯？怎么回事？我刚才晕倒了吗？"
 
-    play sound "audio/sound/qqddd.mp3"
+    play sound notify
     
     "群消息""Conway邀请你加入群“小精灵和老百姓”"
     "什么小精灵？什么老百姓？"
@@ -132,7 +132,7 @@ label .s02apartment:
     "你们约定的旅行时间就要到了，车牌船票和住宿也都妥当。"
     "但原本自告奋勇要煮海鲜的主席和一直想和大家一起玩的子玥姐姐最终选择了咕咕，有一些遗憾呢。"
 
-    # 这里可以插入铃声
+    play sound opening
     "突然，你的手机响了，是一个来自舟山的电话号码，很奇怪，但你还是接听了。"
     "原来是卖船票的淘宝老板。"
 
