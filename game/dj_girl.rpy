@@ -132,7 +132,6 @@ label .gs02shower:
             stop sing fadeout 2.0
             jump .gs03room
 
-# FIXME: 这里与前面衔接似乎有点不流畅
 label .gs03room:
     scene zs villa room2 with fade
     "过了十分钟连南回来了，这时你已经洗完澡坐在床上。"

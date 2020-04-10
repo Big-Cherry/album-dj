@@ -77,8 +77,13 @@ label .s06street:
             
         "没办法了，边走边看吧，可能走过桥就有人接单了。":
             "你们还是图样！显然过桥的出租车肯定没有空车啊！"
-            "你们只好提着五袋东西走了八公里，到民宿的时候已经凌晨了，大家都累瘫了。"
-            jump dj_103.s14villa
+            "你们只好提着五袋东西走了八公里，到民宿的时候已经凌晨了。"
+            "大家都累瘫了，也没有心情再去旁边的沙滩上玩儿，都各自回房间休息了。"
+            if dj_withgirl:
+                jump dj_girl.gs01room
+            else:
+                play music happy_1 fadeout 2.0 fadein 2.0
+                jump .s13room
         "没办法了，再等等吧，总不能走过去吧":
             pass
             
@@ -118,7 +123,7 @@ label .s07street:
             if dj_withgirl:
                 jump dj_girl.gs01room
             else:
-                jump .s13rooom
+                jump .s13room
 
         "先把滴滴的目的地选到我这这个洗浴城吧。":
             "果然目的地改到洗浴城就被接单了，我套路还是深啊。"
@@ -207,11 +212,11 @@ label .s12villa:
     "明老板给出租小哥打了电话，很快确定了明天5点半约四辆出租过来。"
     conway"不愧是外联部长！正部级干部就是不一样！"
     "夜已深，大家约定明天五点起床，五点半在门口集合，各自分了房间，回去睡觉。"
-    jump .s13rooom
+    jump .s13room
 
-label .s13rooom:
+label .s13room:
     scene zs villa room1 with fade
-    "你回到房间，正和汪闲聊着有没有什么吃的，"
+    "你回到房间，正和小汪闲聊着有没有什么吃的，"
     "突然发现床旁边的地板上出现了一只超级大的蜘蛛！"
     image im_spider = im.FactorScale("images/zs/spider.png",0.2)
     show im_spider:
