@@ -79,6 +79,12 @@ label .s16port:
         "算了自认倒霉吧，到舟山找个民宿打牌也挺好":
             $ dunhuang_value -= 10
             "你们在舟山找到了一家价格合适的小别墅。"
+            han"现在就去别墅也太早了吧，要不我们找个地方去逛逛？"
+            ming"我昨天看到采购的那个商城旁边好像有一家密室逃脱，可以去玩一下。"
+            "众人纷纷支持这个决定，于是打车去了商圈。"
+            scene zs mall with fade
+            "虽然舟山是个小地方，但是这个商圈里人可不少。"
+            "大家玩完密室逃脱，又去看了场电影，虽然没能上岛，但玩得也很开心。"
             jump dj_104.s57taxi
 
         "舟山到东极也不过是两个多小时船程，不如我们一起游过去吧":
@@ -521,8 +527,7 @@ label .s30villa_tmp:
     "真是一场诡异的污诺局！牌组的牌都几乎快被大家拿在手上，甚至可以比谁牌多了。"
 
     if dj_withgirl:
-        # FIXME: This value need discussion
-        if dj_girl_opinion > 80:
+        if dj_girl_opinion >= 50:
             jump dj_girl.gs12message
 
         else:
