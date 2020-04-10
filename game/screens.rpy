@@ -111,7 +111,7 @@ screen say(who, what):
     ## 如果有侧边图像，会将其显示在文本之上。请不要在手机界面下显示这个，因为没
     ## 有空间。
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.03 yalign 1.0
 
 
 ## 通过 Character 对象使名称框可用于样式化。
@@ -132,6 +132,8 @@ style window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
+    left_padding 50
+    right_padding 50
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
