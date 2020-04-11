@@ -16,7 +16,7 @@ define me = Character("你")
 
 define conway = Character("冠军", image="conway")
 define lian = Character("连南", image="lian")
-define bwt = Character("小萝卜")
+define bwt = Character("小萝卜", image="bwt")
 define nuo = Character("诺诺", image="nuo")
 define ming = Character("小明", image="ming")
 define wqbh = Character("万千儿", image="wqbh")
