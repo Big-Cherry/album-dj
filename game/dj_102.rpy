@@ -168,7 +168,7 @@ label .s11beach:
     if dj_withgirl:
         jump dj_girl.gs01room
 
-    "正在热闹着，突然发现原本坐在身边的卜和汪两人不见了。"
+    "正在热闹着，突然发现原本坐在身边的小萝卜和小汪两人不见了。"
     "众人疑惑，终于发现这两个人竟然偷偷跑到上面的入口处坐着，似乎在窃窃私语聊着什么……"
     play music happy_1 fadein 2.0
     menu:
@@ -186,7 +186,7 @@ label .s11beach:
 
         "这种时候，怎么能不拍照留下罪证呢！":
             ming"卜文添！"
-            bwt"干啥"
+            bwt"干啥？"
             "众人一起打开了闪光灯拍照。"
             play sound take_photo
             bwt"你们有毒吧！"
