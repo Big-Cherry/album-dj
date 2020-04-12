@@ -24,7 +24,6 @@ label dj_endings:
 label .end01: # By Alan Li
     scene bg end01_1 with fade
     "你的毕业论文得了优秀。"
-    pause
     scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
     scene black with Fade(3.0, 1.0, 0.0)
@@ -32,7 +31,7 @@ label .end01: # By Alan Li
 
 label .end02: # By Wentian Bu
     # 咕咕结局
-    # TODO: need background
+    scene bg end02 with fade
     "你咕咕了群友们，弄哭了冠军。"
     "End 02 - 梨花带雨的冠军"
     scene black with Fade(3.0, 1.0, 0.0)
