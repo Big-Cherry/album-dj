@@ -56,10 +56,12 @@ label .s01room:
     "什么小精灵？什么老百姓？"
     "莫非……"
 
+    ## May lead to different Endings
+    ## AutoSave 10-1
     menu:
         "要不要加入这个群呢？"
         "虽然有点疑惑，但还是点了加入群聊":
-            pass       
+            pass
         "论文要写不完了……":
             jump dj_endings.end01
         "看来今天身体不太舒服，还是睡觉吧":
@@ -87,6 +89,8 @@ label .s01room:
     lian"我刚才看到樱桃神进来了啊，怎么一直不说话？"
     bwt"@樱桃神 爆个照吧"
     shou"樱桃神你前四天可以吗？"
+    ## May lead to different Endings
+    ## AutoSave 10-2
     menu:
         "怎么回答大家呢？"
         "（冠军表情包）我可以":
@@ -109,7 +113,8 @@ label .s01room:
     
     # 要不要带一个学妹呢？
     default dj_withgirl = False
-
+    ## May lead to different story line
+    ## AutoSave 10-3
     menu:
         "你是否也要带个学妹呢？"
         "我觉得可以":

@@ -19,6 +19,7 @@ label .s38villa:
     play sound sleeping
     conway"呼....呼...."
     "熬到现在感觉大家都坚持不住了。"
+    ## Not important
     menu:
         "这时你："
         "大喊：“睡nmb起来嗨！” ":
@@ -68,6 +69,7 @@ label .s40villa:
     me"看看小天是不是在这边？"
     "你们俩走进另外一间房间，发现只有壮壮和有容。"
     me"emmmmm那小天不会是去学妹的房间了吧？"
+    ## Not important
     menu:
         "这时你们怎么办？"
         "卧槽刺激啊，还是不打扰他们了":
@@ -165,6 +167,8 @@ label .s42sunrise:
     zhuang"靠我虚了，要睡觉"
     wqbh"你咋这么菜，昨晚不是提前回去睡了吗？"
     han"我也不太行了，昨晚一直都没睡"
+    ## May jump story
+    ## AutoSave 11-6
     menu:
         "于是众人决定分为两拨，你决定："
         "后会无期标建肯定要去啊！睡觉？睡个p！":
@@ -197,6 +201,8 @@ label .s43sun:
     yourong"冲冲冲！"
     conway"走那么快干啥，我要拍年度图呢"
     shou"谁给你拍你这也太磨叽了。"
+    ## May jump story
+    ## AutoSave 12-1
     menu:
         "这时你决定："
         "冲冲冲，冠军拍照太磨叽了，不知道啥时候才能到海神像":
@@ -317,6 +323,8 @@ label .s48road:
     "老板""可以啊，但得等我下次回岛，或者我帮你们带到舟山寄也行。"
     lian"不急不急，等您回来寄就好，还是东极岛上寄出来比较有趣。"
     "大家于是决定合买一套，纷纷拿起笔开始写起来。"
+    ## May jump story
+    ## AutoSave 12-2
     menu:
         "你是否要寄给在香港的妹妹呢？"
         "那肯定要寄啊，东极岛寄出的多有意思":
@@ -428,6 +436,7 @@ label .s52ship:
     me"什么玩意，都下船了也不喊我？"
     "船舱依然非常晃荡，你站立不稳，扶着座椅走出船舱，却发现整个船似乎要翻了，海里似乎也有星星点点的人在呼救……"
     scene dream onship with dissolve
+    ## Not important
     menu:
         "这时你该怎么办？"
         "我靠，我肯定在做梦吧":
@@ -477,6 +486,7 @@ label .s54grave:
     stop sound fadeout 2.0
     "等你意识到这一点，你已经不知不觉来到了一个石棺面前，上面的苔藓遮住了奇怪的花纹。"
     "这时之前的铃铛声却消失了，取代它的是一片死一样的寂静，仿佛整个世界的时间线都停止，除了远处有一排移动着的不明物体，正渐渐走远。"
+    ## Not important
     menu:
         "这时你？"
         "我靠，这说不定是救援队啊，快来救救我！":
@@ -706,6 +716,8 @@ label .s65villa:
     scene ghost door dark with dissolve
     play music paradise_island fadein 2.0
     "结束后，部分人熬不动准备休息了，你也走出房门，路过对面那个上锁的小屋子时，突然发现门把手上多了一把钥匙。"
+    ## May jump story
+    ## AutoSave 12-3
     menu:
         "这时你："
         "询问大家有人进过这个屋子吗？这个钥匙是怎么回事？":
@@ -739,6 +751,7 @@ label .s66villa:
     wqbh"这既然是个储物间，为什么后面还有一扇门？"
     me"什么？"
     wqbh"你看，这些大箱子的后面不是还有一扇门吗？被堵住了"
+    ## Not important
     menu:
         "这时你："
         "感觉这里不太对劲，还是离开储物间回去看电影吧":

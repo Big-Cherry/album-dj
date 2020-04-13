@@ -665,7 +665,7 @@ screen file_slots(title):
                     textbutton _("{#quick_page}Q") action FilePage("quick")
 
                 ## “range(1, 10)”给出1到9之间的数字。
-                for page in range(1, 10):
+                for page in range(1, 15):
                     textbutton "[page]" action FilePage(page)
 
                 textbutton _(">") action FilePageNext()
