@@ -145,15 +145,14 @@ label .s09taxi:
     "终于，你们历经千辛，终于到了照片上的民宿，你们非常感谢小哥。"
     me"这个鸟不拉屎村也太偏了，明天我们要赶早班船，可以留个手机号，我们如果有需要提前预定一下？"
     "司机小哥""吼啊！"
-
+    stop music fadeout 2.0
     "但...大家，人呢？"
     jump .s11beach
 
 label .s11beach:
     scene zs beach night with fade
+    play music dj_island_wave fadein 1.0
     "寻声而去，原来大家都在下面的石滩上玩耍，好久不见，甚是想念。"
-    stop music fadeout 2.0
-    play sing dj_island_1 fadein 1.0
     """
     不知道谁把音箱打开了，你们一起纵声歌唱：
     
@@ -165,14 +164,11 @@ label .s11beach:
     
     尽管淘宝老板还没有告知明早船票是否购买成功，但和这样有趣的一群人在一起，不管是窝在舟山民宿，还是成功前往东极，都是也一样不枉此行吧。
     """
-    stop sing fadeout 1.0
-    
     if dj_withgirl:
         jump dj_girl.gs01room
 
     "正在热闹着，突然发现原本坐在身边的小天和小茶两人不见了。"
     "众人疑惑，终于发现这两个人竟然偷偷跑到上面的入口处坐着，似乎在窃窃私语聊着什么……"
-    play music happy_1 fadein 2.0
     menu:
         "这时你："
         "我们跑过去一言不发坐在他们周围把他们围住吧，形成大π键":
@@ -202,7 +198,8 @@ label .s12villa:
         "这个鸟不拉屎村，哪来的出租，我们可能需要四点起床，走到最近的公交站...":
             "众人""靠，这都一点了那我们还睡个啥，直接玩通宵吧。"
             "于是众人玩了个通宵，果然打不到出租车，坐公交前往港口。"
-            jump dj_103.s16port
+            stop music fadeout 2.0
+            jump dj_103.s15port
 
         "使用滴滴预约明天的出租车吧":
             "人有点多，至少需要四辆车。滴滴预约没有师傅接单，你们到前台问了老板。"
@@ -213,11 +210,13 @@ label .s12villa:
 
     "明老板给出租小哥打了电话，很快确定了明天5点半约四辆出租过来。"
     conway"不愧是外联部长！正部级干部就是不一样！"
+    stop music fadeout 2.0
     "夜已深，大家约定明天五点起床，五点半在门口集合，各自分了房间，回去睡觉。"
     jump .s13room
 
 label .s13room:
     scene zs villa room1 with fade
+    play music happy_1 fadein 2.0
     "你回到房间，正和小茶闲聊着有没有什么吃的，"
     "突然发现床旁边的地板上出现了一只超级大的蜘蛛！"
     image im_spider = im.FactorScale("images/zs/spider.png",0.2)

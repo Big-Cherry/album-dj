@@ -37,6 +37,9 @@ label .s14villa:
 
 label .s15port:
     scene zs port morning with fade
+    python:
+        if not renpy.music.is_playing(channel='music'):
+            renpy.play("audio/bgm/journey.ogg", channel='music', fadein=2.0)
     "车上你有些困倦不知不觉睡着了，等醒来已经到了码头。"
     "不知为何还不到七点的码头都已经熙熙攘攘了。"
     dan"为啥这么早就这么多人了？"

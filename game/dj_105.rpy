@@ -35,6 +35,7 @@ label .s68villa:
     me"不会吧？"
     "打开手机，从历史记录中访问，发现那个帖子真的已经不能访问了。"
     "你把花纹和钥匙消失的事情告诉了万千，你们决定不再告诉别人这个故事，就让它成为永久的迷，藏在心里吧。"
+    stop music fadeout 2.0
     jump .s69street
 
 label .s69street:
