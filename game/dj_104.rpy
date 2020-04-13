@@ -16,8 +16,10 @@ label .s38villa:
     scene dj villa sleep with fade
     "中场休息之后，大家又讲了其他的故事。"
     "大家似乎都聊累了，你逐渐发现仍然在说话的人越来越少……"
+    play sound sleeping
     conway"呼....呼...."
     "熬到现在感觉大家都坚持不住了。"
+    ## Not important
     menu:
         "这时你："
         "大喊：“睡nmb起来嗨！” ":
@@ -34,6 +36,7 @@ label .s38villa:
     "已经困的睁不开眼睛的冠军也应和着："
     conway"大家别睡，起来玩——啊”"
     han"算了，想睡的就睡，不想睡的我们去隔壁吧。"
+    play sound sleeping
     "你们来到隔壁的房间，继续聊情感话题，但没聊多久，就又传来呼声，于是大家横七竖八地睡着了...."
     scene black with Fade(2.0, 0.0, 1.5, color="#000")
     jump .s39villa
@@ -47,15 +50,17 @@ label .s39villa:
 
     scene dj villa morning with fade
     play sound alarm_clock
+    play music sqh_alarm fadein 2.0
     "随着此起彼伏的闹铃声，你醒了过来。"
-    me"啊！！这就四点半了，我刚才梦里还在吃海底捞呢，狗日的谭康威又没熟就下筷子！"
-    "说着你打醒了睡在旁边的谭康威。"
+    me"啊！！这就四点半了，我刚才梦里还在吃海底捞呢，狗日的冠军又没熟就下筷子！"
+    "说着你打醒了睡在旁边的冠军。"
     "大家也陆续起床了。"
     zheng"大家把最厚的衣服都穿上啊"
     nuo"艹我没带厚衣服，小明把你的衣服给我穿"
     han"诺诺你今天总不需要化妆了吧？"
     shou"哈哈哈哈哈哈化妆就不等她了。"
     nuo"不化妆了md就睡了个午觉都没卸"
+    stop music fadeout 2.0
     "洗漱完毕，大家前往另外一栋民宿，叫醒昨晚虚掉的壮壮和有容。"
 
 label .s40villa:
@@ -66,6 +71,7 @@ label .s40villa:
     me"看看小天是不是在这边？"
     "你们俩走进另外一间房间，发现只有壮壮和有容。"
     me"emmmmm那小天不会是去学妹的房间了吧？"
+    ## Not important
     menu:
         "这时你们怎么办？"
         "卧槽刺激啊，还是不打扰他们了":
@@ -91,12 +97,10 @@ label .s40villa:
     yourong"就算我有多的外套，她能当连衣裙了哈哈哈哈。"
     wqbh"算了...我这样也还行吧。"
     "你们走下楼，和大部队会合。"
-    stop music fadeout 2.0
     jump .s41road
 
 label .s41road:
     scene dj sunrise road with fade
-    play music be_ordinary_instrument fadein 2.0
     nuo"累死我了艹为毛一直是上坡啊！"
     conway"看日出肯定得到地势高的地方啊憨憨。"
     yinyin"那诺诺这个身高可能优势不太明显"
@@ -114,25 +118,24 @@ label .s42sunrise:
 
     scene dj sunrise plat2 with dissolve
     dan"艹这妖风也太大了，我都要被吹倒了"
-    ming"哈哈哈哈谭康威你这围巾包头就跟阿拉伯妇女一样"
+    ming"哈哈哈哈冠军你这围巾包头就跟阿拉伯妇女一样"
+    stop music fadeout 2.0
     yinyin"抖抖抖抖"
     zhuang"靠我们报团取暖吧"
+    play music dj_island fadein 2.0
     han"来把那个小音响拿出来"
     lian"对对还有桃旗也举起来"
-    "众人随着小音箱的旋律合唱东极岛之歌，桃旗迎风飘荡："
-    $ renpy.music.set_pause(True, channel='music')
-    play sing dj_island_3 fadein 1.0
-    "众人""""
-    东极岛 东极岛 我们不会离开你
     
-    生是你的老百姓 死是你的小精灵
+    "众人随着小音箱的旋律合唱东极岛之歌，桃旗迎风飘荡："
+    "众人""""
+    东极岛啊你人杰又地灵，太平洋的风儿最先吹到你
+    
+    东极岛东极岛，大陆最东的岛屿，海浪都来亲吻你，鱼儿都来拥抱你
     """
-    stop sing fadeout 1.0
-    $ renpy.music.set_pause(False, channel='music')
     "路人""你们是大学生吗？一起跑出来玩真好"
     shou"对，我们是高中同学！"
     conway"算起来认识四年多了啊。"
-    "众人""谭康威快哭！"
+    "众人""冠军快哭！"
     conway"才四年不长不长，哭个p"
     "……"
 
@@ -166,6 +169,8 @@ label .s42sunrise:
     zhuang"靠我虚了，要睡觉"
     wqbh"你咋这么菜，昨晚不是提前回去睡了吗？"
     han"我也不太行了，昨晚一直都没睡"
+    ## May jump story
+    ## AutoSave 11-6
     menu:
         "于是众人决定分为两拨，你决定："
         "后会无期标建肯定要去啊！睡觉？睡个p！":
@@ -173,6 +178,7 @@ label .s42sunrise:
             
         "实在是肝不动了，回去睡觉":
             $ dunhuang_value -= 10
+            stop music fadeout 2.0
             "你们一行拖着沉重的步伐，好像梦游一般，不知道怎么就回到了民宿，慌不择床的睡下了。"
             jump .s47villa
 
@@ -188,13 +194,17 @@ label .s43sun:
     "众人""大樱桃就是没素质哈哈哈哈……"
     play sound take_photo
     scene dj sunrise final with phototake
+    stop music fadeout 2.0
     pause 0.5
     scene dj morning road1 with fade
+    play music be_ordinary_instrument fadein 2.0
     "拍完照后，你们一路向着海神像而去，环岛小路竟然都是下坡。"
     lian"这种坡不跑起来真的好难受啊"
     yourong"冲冲冲！"
     conway"走那么快干啥，我要拍年度图呢"
     shou"谁给你拍你这也太磨叽了。"
+    ## May jump story
+    ## AutoSave 12-1
     menu:
         "这时你决定："
         "冲冲冲，冠军拍照太磨叽了，不知道啥时候才能到海神像":
@@ -251,7 +261,7 @@ label .s45seagod:
     wqbh"你咋记得这么清楚"
     lian"你们不看看这片子主题曲是什么"
     "小老弟""什么？"
-    ming"谭康威金曲啊！不唱一个实在对不起大家"
+    ming"冠军金曲啊！不唱一个实在对不起大家"
     conway"music 起！"
     conway"徘徊着的 在路上的 你要走吗 Via Via"
     conway"易碎的 骄傲着 那也曾是我的模样"
@@ -282,13 +292,20 @@ label .s46road:
 
     于是你们在海边一家小摊坐下，吃过老板煮的海鲜面，有些许沙子的味道，但也心满意足，回民宿各自休息了。
     """
+    stop music fadeout 2.0
     jump .s47villa
 
 label .s47villa:
     scene dj villa noon with Fade(2.0, 1.0, 2.0)
     "不知道睡了多久，你渐渐醒了，看到旁边睡着的壮壮，你决定赶紧拿手机拍下他的睡姿："
+    scene dj villa noon with phototake
+    play sound take_photo
     zhuang"扫黄了？"
+    scene dj villa noon with phototake
+    play sound take_photo
     zhuang"我没嫖"
+    scene dj villa noon with phototake
+    play sound take_photo
     zhuang"她自愿的"
     "……"
     "大家陆陆续续都起来了。"
@@ -300,6 +317,7 @@ label .s47villa:
 
 label .s48road:
     scene dj postcard with fade
+    play music rain fadein 2.0
     "这时外面乌云密布，狂风大作，原来这就是台风！真的是活久见，大家的伞被吹得东倒西歪，终于快要走到码头了。"
     lian"诶那有个小店好像可以买明信片，我们去看看吧。"
     "老板""大家赶紧看啊，一会我也要坐船走了。"
@@ -307,12 +325,13 @@ label .s48road:
     "老板""可以啊，但得等我下次回岛，或者我帮你们带到舟山寄也行。"
     lian"不急不急，等您回来寄就好，还是东极岛上寄出来比较有趣。"
     "大家于是决定合买一套，纷纷拿起笔开始写起来。"
+    ## May jump story
+    ## AutoSave 12-2
     menu:
         "你是否要寄给在香港的妹妹呢？"
         "那肯定要寄啊，东极岛寄出的多有意思":
             $ dunhuang_value += 10
             "于是你给妹妹也寄了一张明信片，期待着她惊喜的表情。"
-            jump .s49port
 
         "我买张明信片就行了，之后亲自带给她":
             "于是你买了一张明信片，写完贴上邮票放在包里。"
@@ -320,12 +339,13 @@ label .s48road:
 
         "算了吧，没必要":
             $ dunhuang_value -= 10
-            jump .s49port
+    
     stop music fadeout 2.0
+    jump .s49port
 
 label .s49port:
     scene dj port with fade
-    "众人离开明信片小店，竟然下起了大雨，一路艰难跋涉到港口，这时已经到了检票时间，你们赶忙进入候船厅。"
+    "众人离开明信片小店，一路艰难跋涉到港口，这时已经到了检票时间，你们赶忙进入候船厅。"
     play music hostility fadein 2.0
     han"咋回事我身份证又刷不出来票？"
     lian"我靠不会吧？？？"
@@ -383,7 +403,8 @@ label .s49port:
 
 label .s50road:
     scene dj port with fade
-    "众人离开明信片小店，竟然下起了大雨，大家一路艰难跋涉到港口。"
+    play music hostility fadein 2.0
+    "众人离开明信片小店，一路艰难跋涉到港口。"
     "不行，还是得从东极岛寄给妹妹的明信片才有意义啊，要不然淘宝店岂不是很多。还是回去寄吧。"
     me"兽兽，你们先登船，我去给妹妹寄明信片。"
     shou"行，我跟大家说一声，你快去快回。"
@@ -409,7 +430,6 @@ label .s51port:
 
     一路摸爬滚打终于到了下仓，坐了下来，晃来晃去，你并不知道船是什么时候开的，就睡着了。
     """
-    stop music fadeout 2.0
     jump .s52ship
 
 label .s52ship:
@@ -418,6 +438,7 @@ label .s52ship:
     me"什么玩意，都下船了也不喊我？"
     "船舱依然非常晃荡，你站立不稳，扶着座椅走出船舱，却发现整个船似乎要翻了，海里似乎也有星星点点的人在呼救……"
     scene dream onship with dissolve
+    ## Not important
     menu:
         "这时你该怎么办？"
         "我靠，我肯定在做梦吧":
@@ -435,6 +456,7 @@ label .s52ship:
             "你竟然打通了110的电话。"
             me"喂？警察叔叔我好怕……"
             "就在这时，船剧烈抖动，你被甩过了船舷……"
+    stop music fadeout 2.0
     play sound fall_in_water
     jump .s53sea
 
@@ -450,7 +472,7 @@ label .s53sea:
     而且，深蓝色的海洋里竟然没有一条鱼。
     """
     scene dream acientship with fade
-    play sound undersea fadein 2.0
+    play sound terrible_ring fadein 2.0
     """
     不知道过了多久，你回头发现已经完全看不到海平面，耳边突然响起了一阵空灵的铃铛声……
 
@@ -463,8 +485,10 @@ label .s53sea:
 label .s54grave:    
     scene dream grave with dissolve
     "与其说是巨轮，不如说它更像是一个海底的古墓。"
+    stop sound fadeout 2.0
     "等你意识到这一点，你已经不知不觉来到了一个石棺面前，上面的苔藓遮住了奇怪的花纹。"
     "这时之前的铃铛声却消失了，取代它的是一片死一样的寂静，仿佛整个世界的时间线都停止，除了远处有一排移动着的不明物体，正渐渐走远。"
+    ## Not important
     menu:
         "这时你？"
         "我靠，这说不定是救援队啊，快来救救我！":
@@ -475,6 +499,7 @@ label .s54grave:
         "还是别了，还是静态的东西让人安心，闷声大发财吧":
             $ dunhuang_value -= 10
 
+    play sound undersea fadein 2.0
     "正在你在纠结为什么自己没有窒息而死的时候，你突然听到身旁的石棺不知道为什么已经打开了一条缝，正发出了悉悉簌簌的声响"
     "好像里面有一双惨白的眼睛正漫不经心地盯着你。"
     "你想大叫，却叫不出声……"
@@ -530,7 +555,8 @@ label .s58lost:
 
     scene ghost lost with fade
     "不多时，你们走着走着却发现有点不太对劲，怎么...这周围的环境跟五分钟前这么像呢？"
-    "高德地图""正在为您重新规划路线……"
+    play sound route_replan
+    "高德地图雷萌萌版""正在为您重新规划路线……"
     wqbh"这咋一直在重新规划？你会不会带路啊？"
     me"我确实按照规划的路线走的啊...是有点不太对劲...."
     wqbh"靠你别吓我，我还没遇到过鬼打墙"
@@ -543,7 +569,7 @@ label .s58lost:
 
     wqbh"神经病啊你们，自己吓唬自己，我们跟在别墅的人开个位置共享不就行了，让他们来接我们。"
     me"好有道理！！！"
-    "于是你们站在原地等待救援，直到郑出现在你们的视野范围内，终于舒了一口气。"
+    "于是你们站在原地等待救援，直到阿郑出现在你们的视野范围内，终于舒了一口气。"
     "但是...你仍然在思考为什么刚才会出现这种情况..."
     "难道是在船上沾了什么不干净的东西？你不禁回忆起当时做的那个梦……"
     stop music fadeout 2.0
@@ -556,7 +582,7 @@ label .s59villa:
     "大家笑笑闹闹，吵吵嚷嚷地抢浴室，这种气氛之下，就算是鬼也不敢来吧。"
     "你舒了一口气，收拾了下东西，准备去洗澡。"
     lian"太狗屎了，这鬼台风把航班都取消了，我这可咋回去啊"
-    nuo"你要不紧急求助下邱凌岳？我每次误车都找他"
+    nuo"你要不紧急求助下邱？我每次误车都找他"
     lian"有道理，不知道这么晚了，还有没有救……"
     "谁叫连老板土豪呢，飞机来回啧啧啧，还是我们坐火车的稳。"
     jump .s60shower
@@ -576,7 +602,7 @@ label .s61villa:
     scene ghost room1 with fade
     "洗漱完毕，你走出浴室，坐到床上玩手机。"
     lian"完蛋了啊，过十一点了，12306都关了"
-    "邱凌岳""没事你别担心， 我刚看到还有一班K的无座，回去肯定能回去的。"
+    "邱""没事你别担心， 我刚看到还有一班K的无座，回去肯定能回去的。"
     lian"无座，杀了我吧5555"
     """
     不知为何，你很想在百度里搜一下东极岛海域的沉船故事，但好像没有什么相关的，却有一条人人网里的消息：“临安，渔阳，东极，沙州，是一个不可言说的秘密。”
@@ -692,6 +718,8 @@ label .s65villa:
     scene ghost door dark with dissolve
     play music paradise_island fadein 2.0
     "结束后，部分人熬不动准备休息了，你也走出房门，路过对面那个上锁的小屋子时，突然发现门把手上多了一把钥匙。"
+    ## May jump story
+    ## AutoSave 12-3
     menu:
         "这时你："
         "询问大家有人进过这个屋子吗？这个钥匙是怎么回事？":
@@ -725,6 +753,7 @@ label .s66villa:
     wqbh"这既然是个储物间，为什么后面还有一扇门？"
     me"什么？"
     wqbh"你看，这些大箱子的后面不是还有一扇门吗？被堵住了"
+    ## Not important
     menu:
         "这时你："
         "感觉这里不太对劲，还是离开储物间回去看电影吧":
@@ -753,6 +782,5 @@ label .s67villa:
     "……"
     scene ghost room movie with dissolve
     "于是你们又回到电影房，看完电影，然后休息了。"
-    stop music fadeout 2.0
     scene black with Fade(1.5, 1.0, 0.0)
     jump dj_105.s68villa

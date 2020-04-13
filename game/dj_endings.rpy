@@ -24,7 +24,6 @@ label dj_endings:
 label .end01: # By Alan Li
     scene bg end01_1 with fade
     "你的毕业论文得了优秀。"
-    pause
     scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
     scene black with Fade(3.0, 1.0, 0.0)
@@ -32,7 +31,7 @@ label .end01: # By Alan Li
 
 label .end02: # By Wentian Bu
     # 咕咕结局
-    # TODO: need background
+    scene bg end02 with fade
     "你咕咕了群友们，弄哭了冠军。"
     "End 02 - 梨花带雨的冠军"
     scene black with Fade(3.0, 1.0, 0.0)
@@ -96,7 +95,7 @@ label .end05:
     me"有容？？你不是昨天就走了吗？！"
     yourong"啥玩意！好巧啊桃神！你也是这班车？"
     me"小杰瑞？你又是哪冒出来的"
-    "小杰瑞""我们没买到座位，只有无座了，只能在厕所门槛混了一晚上，太求惨了..."
+    "小杰瑞""我们没买到座位，只有无座了，只能在厕所门口混了一晚上，太求惨了..."
 
     play sound notify
     "群通知""Conway邀请你加入群聊"
