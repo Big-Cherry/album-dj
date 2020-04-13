@@ -50,6 +50,7 @@ label .s39villa:
 
     scene dj villa morning with fade
     play sound alarm_clock
+    play music sqh_alarm fadein 2.0
     "随着此起彼伏的闹铃声，你醒了过来。"
     me"啊！！这就四点半了，我刚才梦里还在吃海底捞呢，狗日的冠军又没熟就下筷子！"
     "说着你打醒了睡在旁边的冠军。"
@@ -59,6 +60,7 @@ label .s39villa:
     han"诺诺你今天总不需要化妆了吧？"
     shou"哈哈哈哈哈哈化妆就不等她了。"
     nuo"不化妆了md就睡了个午觉都没卸"
+    stop music fadeout 2.0
     "洗漱完毕，大家前往另外一栋民宿，叫醒昨晚虚掉的壮壮和有容。"
 
 label .s40villa:
