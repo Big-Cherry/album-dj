@@ -553,7 +553,7 @@ label .s30villa_tmp:
     "真是一场诡异的污诺局！牌组的牌都几乎快被大家拿在手上，甚至可以比谁牌多了。"
 
     if dj_withgirl:
-        if dj_girl_opinion >= 50:
+        if dj_girl_opinion >= 40:
             jump dj_girl.gs12message
 
         else:
