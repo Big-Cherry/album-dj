@@ -79,7 +79,11 @@ label .s70taxi:
         "还是到车站下吧，至少车站有麦当劳吃，大家汇合在一起也好商量":
             $ dunhuang_value -= 10
             "你们在车站汇合了，很开心又见到了大家，但..."
-            jump dj_endings.end03
+            scene bg end03 with fade
+            "下了车真的就再也打不到出租了，你们被困在车站麦当劳里过上了难民生活。"
+            "直到第二天台风渐渐停了，大家才打到车前往宁波。"
+            stop music fadeout 2.0
+            jump .s73nbstreet
 
         "下车了估计就再也打不到出租了...我们还这么多人，肯定困在车站了":
             pass

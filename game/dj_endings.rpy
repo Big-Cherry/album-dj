@@ -29,22 +29,6 @@ label .end01: # By Alan Li
     scene black with Fade(3.0, 1.0, 0.0)
     jump display_value
 
-label .end02: # By Wentian Bu
-    # 咕咕结局
-    scene bg end02 with fade
-    "你咕咕了群友们，弄哭了冠军。"
-    "End 02 - 梨花带雨的冠军"
-    scene black with Fade(3.0, 1.0, 0.0)
-    jump display_value
-
-label .end03: # By Alan Li
-    # 逃离失败成为难民
-    scene bg end03 with fade
-    "你们逃离失败被困在舟山客运站，过上了难民生活。"
-    "End 03 - 难民的麦当劳"
-    scene black with Fade(3.0, 1.0, 0.0)
-    jump display_value
-
 label .end04: # By Conway Tan
     stop music fadeout 2.0
     play sound notify
