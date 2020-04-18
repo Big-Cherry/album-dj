@@ -72,8 +72,7 @@ label .s70taxi:
     conway"车站已经贴出告示了，说台风天气，客运大巴全部停运。"
     conway"全车站都是滞留的旅客，连离开车站都要排很长的队打出租。"
     "小哥""是的，这种天气大巴车估计不敢上大桥，马上就要到车站了，你们还按原计划下吗？"
-    ## May lead to different endings
-    ## AutoSave 12-4
+    ## Not important
     menu:
         "时间紧急，要赶紧做决定："
         "还是到车站下吧，至少车站有麦当劳吃，大家汇合在一起也好商量":
@@ -180,7 +179,10 @@ label .s73nbstreet:
     "然而大家都拿不定主意，现在去找民宿显然来不及，而住酒店又不确定人家能不能允许大床房睡七八个人，更何况是男女混住……"
     conway"要不我们去KTV搞一夜吧？然后，可以再去捞！"
     ## May jump story
-    ## AutoSave 12-5
+    ## AutoSave 2-6
+    python:
+        renpy.take_screenshot()
+        renpy.save("12-6", "在宁波最后一晚去干什么呢？")
     menu:
         "这时你说："
         "几天都没合眼了，我们还是找个地方睡吧...":
@@ -217,7 +219,10 @@ label .s74ktv:
     诺诺把你唱歌的视频拍下来发到了“老百姓和小精灵”的群里，已经在候车的万千儿不停地回复：羡慕！想来玩！好听！
     """
     ## May lead to different endings
-    ## AutoSave 12-6
+    ## AutoSave 3-1
+    python:
+        renpy.take_screenshot()
+        renpy.save("13-1", "万千儿说你唱歌好听……")
     menu:
         "这时你："
         "第一次有人说自己唱歌好听，你在群里面回复她：终于遇到知音了！！":

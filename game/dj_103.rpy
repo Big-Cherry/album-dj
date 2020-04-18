@@ -70,7 +70,11 @@ label .s16port:
     "随即老板挂了电话，再也打不通。"
     default menuset = set()
     ## May jump story
-    ## AutoSave 11-2
+    ## AutoSave 2-1
+    python:
+        renpy.take_screenshot()
+        renpy.save("12-1", "黑心老板不接你们的电话……")
+
     menu .s16port_ques:
         set menuset
         "你们该怎么办..."
@@ -148,7 +152,12 @@ label .s18port:
     ming"我们刚才看到了一个价格适合的酒店，还有一个套间目前空出。"
     han"套间确实适合我们去住。"
     ## May jump story
-    ## AutoSave 11-3
+    ## AutoSave 2-2
+    ## Add Note
+    python:
+        renpy.take_screenshot()
+        renpy.save("12-2", "要不要订下那个套间呢？")
+
     menu:
         "这时你们准备怎么办？"
         "继续等着，但很担心酒店房间被别人抢定下来，先下单吧":
@@ -501,7 +510,11 @@ label .s30villa:
         jump .s30villa_tmp
 
     ## May jump story
-    ## AutoSave 11-4
+    ## AutoSave 2-3
+    python:
+        renpy.take_screenshot()
+        renpy.save("12-3", "UNO玩得有点困了……")
+
     menu:
         "这时你说："
         "我们大家去睡觉吧！":
@@ -586,7 +599,11 @@ label .s31love:
     "舒缓的配乐响起，小茶低头羞涩一笑。"
     tea"啊？主角是我嘛……那你们想听什么呢？"
     ## May jump story
-    ## AutoSave 11-5
+    ## AutoSave 2-4
+    python:
+        renpy.take_screenshot()
+        renpy.save("12-4", "你想听小茶讲什么呢？")
+
     menu:
         "你想听："
         "夏日限定心动之男生都和我告白怎么办":

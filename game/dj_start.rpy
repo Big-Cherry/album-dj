@@ -57,7 +57,12 @@ label .s01room:
     "莫非……"
 
     ## May lead to different Endings
-    ## AutoSave 10-1
+    ## AutoSave 1-1
+    ## Add Note
+    python:
+        renpy.take_screenshot()
+        renpy.save("11-1", "要不要加入这个群呢？")
+
     menu:
         "要不要加入这个群呢？"
         "虽然有点疑惑，但还是点了加入群聊":
@@ -123,7 +128,12 @@ label .s01room:
     # 要不要带一个学妹呢？
     default dj_withgirl = False
     ## May lead to different story line
-    ## AutoSave 10-3
+    ## AutoSave 1-2
+    ## Add Note
+    python:
+        renpy.take_screenshot()
+        renpy.save("11-2", "你是否也要带个学妹呢？")
+        
     menu:
         "你是否也要带个学妹呢？"
         "我觉得可以":
