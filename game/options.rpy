@@ -11,13 +11,13 @@
 ##
 ## 带有 _() 的字符串表示其可被翻译。
 
-define config.name = _("东极之旅")
+define config.name = _("大樱桃纪念册——东极篇")
 
 
 ## 决定上面给出的标题是否显示在主界面屏幕。设置为 False 来隐藏标题。
 
-define gui.show_name = True
-
+define gui.show_name = False
+define gui.show_version = True
 
 ## 游戏版本号。
 
@@ -27,15 +27,20 @@ define config.version = "0.4.1"
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
 
 define gui.about = _p("""
-
 大樱桃纪念册工作组  呈献
+
 
 这是大樱桃纪念册的第一部分。
 
-编剧：全群弟弟  最凶担当  误车担当  活动鸽鸽
+策划&剧本总监：全群弟弟
 
-脚本：智商担当
+美术总监：最凶担当
 
+音乐总监：活动鸽鸽
+
+程序总监：智商担当
+
+咕咕总监：误车担当
 """)
 
 
@@ -64,7 +69,7 @@ define config.has_voice = True
 ## 将以下语句取消注释就可以设置主界面播放的背景音乐文件。此文件将在整个游戏中持
 ## 续播放，直至音乐停止或其他文件开始播放。
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+# define config.main_menu_music = "audio/bgm/dj_island.ogg"
 
 
 ## 转场 ##########################################################################

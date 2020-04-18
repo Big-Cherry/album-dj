@@ -283,28 +283,36 @@ style quick_button_text:
 ## 该屏幕包含在标题菜单和游戏菜单中，并提供导航到其他菜单，以及启动游戏。
 
 screen navigation():
+    hbox:
+        xalign 0.95
+        yalign 0.05
+
+        if main_menu:
+            imagebutton auto "gui/navi/website_%s.png" action OpenURL("https://www.bigcherry.com.cn")
 
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign gui.navigation_xalign
+        yalign 0.59
 
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("开始游戏") action Start()
+            imagebutton auto "gui/navi/start_%s.png" action Start()
+            imagebutton auto "gui/navi/load_%s.png"  action ShowMenu("load")
+            imagebutton auto "gui/navi/settings_%s.png" action ShowMenu("preferences")
+            imagebutton auto "gui/navi/about_%s.png" action ShowMenu("about")
+            # textbutton _("开始游戏") action Start()
 
         else:
+            imagebutton auto "gui/navi/small_load_%s.png" action ShowMenu("load")
 
-            textbutton _("历史") action ShowMenu("history")
+            imagebutton auto "gui/navi/history_%s.png" action ShowMenu("history")
 
-            textbutton _("保存") action ShowMenu("save")
+            imagebutton auto "gui/navi/save_%s.png" action ShowMenu("save")
 
-        textbutton _("读取游戏") action ShowMenu("load")
-
-        textbutton _("设置") action ShowMenu("preferences")
+            imagebutton auto "gui/navi/settings_%s.png" action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -312,20 +320,24 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("标题界面") action MainMenu()
-
-        textbutton _("关于") action ShowMenu("about")
+            imagebutton auto "gui/navi/about_%s.png" action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## “帮助”对移动设备来说并非必须或相关。
-            textbutton _("帮助") action ShowMenu("help")
+            # textbutton _("帮助") action ShowMenu("help")
+            imagebutton auto "gui/navi/help_%s.png" action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("退出") action Quit(confirm=not main_menu)
+            if main_menu:
+                imagebutton auto "gui/navi/exit_%s.png" action Quit(confirm=not main_menu)
+            
+            else:
+                imagebutton auto "gui/navi/exit_%s.png" action MainMenu()
+            # textbutton _("退出") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -355,8 +367,8 @@ screen main_menu():
     add gui.main_menu_background
 
     ## 此空框可使标题菜单变暗。
-    frame:
-        pass
+    # frame:
+    #     pass
 
     ## “use”语句将其他的屏幕包含进此屏幕。标题屏幕的实际内容在导航屏幕中。
     use navigation
@@ -367,15 +379,20 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+    if gui.show_version:
+        text "Version [config.version] Insider":
+            style "main_menu_version"
 
+    if config.developer:
+        text "Developer Mode Enabled":
+            style "main_menu_developer_mode"
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
+style main_menu_developer_mode is main_menu_text
 
 style main_menu_frame:
     xsize 280
@@ -401,11 +418,14 @@ style main_menu_title:
 
 style main_menu_version:
     # properties gui.text_properties("version")
-    size 30
-    xalign 0.55
-    xoffset -10
+    size 15
+    xalign 1.0
+    yalign 1.0
     
-
+style main_menu_developer_mode:
+    xalign 1.0
+    yalign 0.0
+    size 15
 
 ## 游戏菜单屏幕 ######################################################################
 ##
@@ -419,20 +439,15 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+    # if main_menu:
+    #     add gui.main_menu_background
+    # else:
+    add gui.game_menu_background
 
     frame:
         style "game_menu_outer_frame"
 
         hbox:
-
-            ## 导航部分的预留空间。
-            frame:
-                style "game_menu_navigation_frame"
-
             frame:
                 style "game_menu_content_frame"
 
@@ -469,14 +484,28 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
+            ## 导航部分的预留空间。
+            frame:
+                style "game_menu_navigation_frame"
+
     use navigation
 
-    textbutton _("返回"):
+    imagebutton auto "gui/navi/return_%s.png":
         style "return_button"
-
         action Return()
 
-    label title
+    python:
+        pic_dict = {
+            "保存": "gui/title/save.png",
+            "历史": "gui/title/history.png",
+            "设置": "gui/title/settings.png",
+            "关于": "gui/title/about.png",
+            "帮助": "gui/title/help.png",
+            "读取游戏": "gui/title/load.png"
+        }
+
+    add pic_dict[title] xalign 0.05 yalign 0.05
+    # label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -502,11 +531,13 @@ style game_menu_outer_frame:
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 280
+    xsize 300
+    xalign 0.8
     yfill True
 
 style game_menu_content_frame:
-    left_margin 40
+    xsize 950
+    left_margin 120
     right_margin 20
     top_margin 10
 
@@ -529,7 +560,7 @@ style game_menu_label_text:
     yalign 0.5
 
 style return_button:
-    xpos gui.navigation_xpos
+    xalign gui.navigation_xalign
     yalign 1.0
     yoffset -30
 
@@ -969,7 +1000,7 @@ screen help():
 
     tag menu
 
-    default device = "keyboard"
+    default device = "universe"
 
     use game_menu(_("帮助"), scroll="viewport"):
 
@@ -979,19 +1010,42 @@ screen help():
             spacing 15
 
             hbox:
-
+                textbutton  ("通用") action SetScreenVariable("device", "universe")
                 textbutton _("键盘") action SetScreenVariable("device", "keyboard")
                 textbutton _("鼠标") action SetScreenVariable("device", "mouse")
 
                 if GamepadExists():
                     textbutton _("手柄") action SetScreenVariable("device", "gamepad")
 
-            if device == "keyboard":
+            if device == "universe":
+                use universe_help
+            elif device == "keyboard":
                 use keyboard_help
             elif device == "mouse":
                 use mouse_help
             elif device == "gamepad":
                 use gamepad_help
+
+define universe_help_info = _p("""
+本游戏支持完全回滚。
+
+您可以通过滑动鼠标滚轮来回滚游戏至本次游戏之前的某个时刻，修改您的选择。
+
+本游戏会自动存档。
+
+正常游戏中，游戏会经常在随机时刻存档。这些自动存档可以在存档的A页面找到。
+这种自动存档有上限，超出后会覆盖旧的自动存档内容。
+
+游戏还会在影响到剧情的关键选择分支处自动存档，便于您之后快速游玩所有的剧情。
+这些存档可在存档的B1-B3页面找到。
+每个设定的存档点都对应了固定的槽位，因此只有在您再次游玩到指定的存档点时才会覆盖上次的该位置存档。
+
+""")
+
+
+screen universe_help():
+    text "[universe_help_info!t]\n"
+
 
 
 screen keyboard_help():
