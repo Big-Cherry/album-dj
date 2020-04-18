@@ -153,7 +153,6 @@ label .s18port:
     han"套间确实适合我们去住。"
     ## May jump story
     ## AutoSave 2-2
-    ## Add Note
     python:
         renpy.take_screenshot()
         renpy.save("12-2", "要不要订下那个套间呢？")
@@ -570,6 +569,7 @@ label .s30villa_tmp:
             jump dj_girl.gs12message
 
         else:
+            $ dj_tips = "end7"
             jump dj_girl.gs17love
             
     else:
@@ -616,6 +616,7 @@ label .s31love:
         "晚安，老子去睡觉了，你们都猝死吧，再见.jpg":
             $ dunhuang_value -= 20
             "于是你去睡觉了，后来众人告诉你你错过了许多精彩的故事……"
+            $ dj_tips = "jump_love"
             stop music fadeout 2.0
             scene black with fade
             jump dj_104.s39villa
