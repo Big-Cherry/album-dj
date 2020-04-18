@@ -12,6 +12,7 @@
 # 全局属性定义区：
 
 default dunhuang_value = 0
+default dj_tips = "empty"
 
 # 特殊图像
 
