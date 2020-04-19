@@ -30,10 +30,7 @@ init python:
 # 游戏启动时的Splash界面
 
 label splashscreen:
-    scene black
-    image text0 = Text("BigCherry Present", size=35)
-    show text0 at truecenter with fade
-    pause 0.8
+    $ renpy.movie_cutscene('video/splash.avi')
     scene splash with fade
     pause
     return
