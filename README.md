@@ -1,5 +1,5 @@
 # 大樱桃AVG纪念册
-![](https://img.shields.io/badge/status-alpha-yellow) ![](https://img.shields.io/badge/rate-★★★★★-brightgreen) ![](https://img.shields.io/badge/language-Ren'Py-brightgreen) ![](https://img.shields.io/badge/platform-win%20%7C%20osx%20%7C%20html5-lightgrey)
+![](https://img.shields.io/badge/status-beta-yellow) ![](https://img.shields.io/badge/rate-★★★★★-brightgreen) ![](https://img.shields.io/badge/language-Ren'Py-brightgreen) ![](https://img.shields.io/badge/platform-win%20%7C%20osx%20%7C%20html5-lightgrey)
 ## 背景
 
 大樱桃纪念册的概念首次提出是在2016年暑假。当时预想的是制作一本纸质的全彩照片、文字纪念册，由冠军等人设计、编撰。最开始设立的DDL是在开学后（2016年9月）完成并交付印刷，然后邮寄到大樱桃的各位成员的学校。

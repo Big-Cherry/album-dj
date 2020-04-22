@@ -380,7 +380,7 @@ screen main_menu():
                 style "main_menu_title"
 
     if gui.show_version:
-        text "Version [config.version] Insider":
+        text "Version [config.version]":
             style "main_menu_version"
 
     if config.developer:

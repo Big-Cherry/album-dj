@@ -21,7 +21,7 @@ define gui.show_version = True
 
 ## 游戏版本号。
 
-define config.version = "0.4.1"
+define config.version = "0.5-beta"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
@@ -69,7 +69,7 @@ define config.has_voice = True
 ## 将以下语句取消注释就可以设置主界面播放的背景音乐文件。此文件将在整个游戏中持
 ## 续播放，直至音乐停止或其他文件开始播放。
 
-# define config.main_menu_music = "audio/bgm/dj_island.ogg"
+define config.main_menu_music = "audio/bgm/dj_island.ogg"
 
 
 ## 转场 ##########################################################################
