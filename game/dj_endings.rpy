@@ -17,12 +17,18 @@ label dbgend:
     return
 
 label display_value:
+    $ renpy.movie_cutscene('video/final.avi')
+
+    play music hhwq fadein 2.0
+    scene goodbye with fade
+    $ percent = random.randint(0, 100)
     if dj_withgirl:
-        "学妹对你的好感度是：[dj_girl_opinion]，超过了0%%的玩家，真辣鸡！"
+        "学妹对你的好感度是：[dj_girl_opinion]，超过了[percent]%%的玩家，真辣鸡！"
     else:
-        "你的敦煌值是：[dunhuang_value]，超过了99%%的玩家，真NB！"
+        "你的敦煌值是：[dunhuang_value]，超过了[percent]%%的玩家，真NB！"
+    jump end_tips
 
-
+label end_tips:    
     # 结局提示
     python:
         tips_dict = {
@@ -32,13 +38,17 @@ label display_value:
             "end4": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
             "end5": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
             "end6": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
-            "end7": "你进入了学妹线的一个分支结局。学妹线有基于好感度触发的其他结局，你可以读取存档页B1中的存档2来重玩学妹线以进入其他结局，或者游玩主线。"
+            "end7": "你进入了学妹线的一个分支结局。学妹线有基于好感度触发的其他结局，你可以读取存档页B1中的存档2来重玩学妹线以进入其他结局，或者游玩主线。",
+            "empty": ""
         }
         tips_text = tips_dict[dj_tips]
 
     "温馨提示""[tips_text]"
     "温馨提示""在存档页面B1-B3中自动为你存档了可能跳过大量剧情的关键分支问题。你可以读档来游玩被跳过的部分。"
     
+    scene preview with fade
+    scene black with Fade(3.0, 0.5, 0.0)
+    pause
     return
 
 label dj_endings:
@@ -47,9 +57,10 @@ label .end01: # By Alan Li
     "你的毕业论文得了优秀。"
     scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
+    stop music fadeout 2.0
     scene black with Fade(3.0, 1.0, 0.0)
     $ dj_tips = "end1"
-    jump display_value
+    jump end_tips
 
 label .end04: # By Conway Tan
     stop music fadeout 2.0

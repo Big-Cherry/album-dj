@@ -23,8 +23,10 @@ image black = Solid("#000")
 define phototake = Fade(0.1, 0.0, 0.1)
 define fade = Fade(1.0, 1.0, 1.0)
 
-# 注册歌唱通道
 init python:
+    import random
+
+    # 注册歌唱通道
     renpy.music.register_channel('sing', mixer='music', loop=False, stop_on_mute=True)
 
 # 游戏启动时的Splash界面
