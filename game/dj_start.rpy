@@ -57,7 +57,11 @@ label .s01room:
     "莫非……"
 
     ## May lead to different Endings
-    ## AutoSave 10-1
+    ## AutoSave 1-1
+    python:
+        renpy.take_screenshot()
+        renpy.save("11-1", "要不要加入这个群呢？")
+
     menu:
         "要不要加入这个群呢？"
         "虽然有点疑惑，但还是点了加入群聊":
@@ -89,20 +93,29 @@ label .s01room:
     lian"我刚才看到樱桃神进来了啊，怎么一直不说话？"
     bwt"@樱桃神 爆个照吧"
     shou"樱桃神你前四天可以吗？"
-    ## May lead to different Endings
-    ## AutoSave 10-2
+    ## Not important
     menu:
         "怎么回答大家呢？"
         "（冠军表情包）我可以":
+            image meme1 = im.FactorScale("images/other/meme conway.jpg", 0.1)
+            me"{image=meme1}"
             "奇怪……为什么2019年的表情包在这个时间线也能用？"
             
         "（鸽子表情包）一定来，一定来":
-            jump dj_endings.end02
+            image meme2 = im.FactorScale("images/other/meme gugu.jpg", 0.25)
+            me"{image=meme2}"
+            lian"进群先交钱啊，咕咕不退款的"
+            ming"搞快搞快，我支持，赶紧发收款码"
 
-        "听说这次行程艰苦，我还是算了吧，溜了溜了":
-            jump dj_endings.end01
+        "（樱桃表情包）溜了溜了":
+            image meme3 = im.FactorScale("images/other/meme cherry.png", 0.25)
+            me"{image=meme3}"
+            ming"群都进了，来都来了"
+            lian"樱桃神来嘛，大家都特别想见你呢"
+            ming"对呀对呀，这次还有学妹呢！"
         
     wqbh"@樱桃神 哇，你就是传说中的樱桃神吗？"
+    ming"@樱桃神 你看学妹超级崇拜你呢！"
     me"新人学妹爆个照吧！"
     wqbh"我不我就不我偏不，有大佬罩着我"
     "尴尬……竟然被学妹拒绝了"
@@ -114,7 +127,11 @@ label .s01room:
     # 要不要带一个学妹呢？
     default dj_withgirl = False
     ## May lead to different story line
-    ## AutoSave 10-3
+    ## AutoSave 1-2
+    python:
+        renpy.take_screenshot()
+        renpy.save("11-2", "你是否也要带个学妹呢？")
+
     menu:
         "你是否也要带个学妹呢？"
         "我觉得可以":

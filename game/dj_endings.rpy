@@ -17,7 +17,38 @@ label dbgend:
     return
 
 label display_value:
-    "你的敦煌值是：[dunhuang_value]，超过了99%%的玩家，真NB！"
+    $ renpy.movie_cutscene('video/final.avi')
+
+    play music hhwq fadein 2.0
+    scene goodbye with fade
+    $ percent = random.randint(0, 100)
+    if dj_withgirl:
+        "学妹对你的好感度是：[dj_girl_opinion]，超过了[percent]%%的玩家，真辣鸡！"
+    else:
+        "你的敦煌值是：[dunhuang_value]，超过了[percent]%%的玩家，真NB！"
+    jump end_tips
+
+label end_tips:    
+    # 结局提示
+    python:
+        tips_dict = {
+            "end1": "你跳过了所有的主线剧情。你可以在存档页B1中读取存档1来游玩被跳过的剧情。",
+            "end2": "你进入了主线的一个分支结局。你可以在存档页B3中读取存档1来游玩主线的另一个结局，或是读取B1中的存档2来游玩学妹线。",
+            "end3": "你进入了主线的一个分支结局。你可以在存档页B3中读取存档1来游玩主线的另一个结局，或是读取B1中的存档2来游玩学妹线。",
+            "end4": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
+            "end5": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
+            "end6": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
+            "end7": "你进入了学妹线的一个分支结局。学妹线有基于好感度触发的其他结局，你可以读取存档页B1中的存档2来重玩学妹线以进入其他结局，或者游玩主线。",
+            "empty": ""
+        }
+        tips_text = tips_dict[dj_tips]
+
+    "温馨提示""[tips_text]"
+    "温馨提示""在存档页面B1-B3中自动为你存档了可能跳过大量剧情的关键分支问题。你可以读档来游玩被跳过的部分。"
+    
+    scene preview with fade
+    scene black with Fade(3.0, 0.5, 0.0)
+    pause
     return
 
 label dj_endings:
@@ -26,24 +57,10 @@ label .end01: # By Alan Li
     "你的毕业论文得了优秀。"
     scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
+    stop music fadeout 2.0
     scene black with Fade(3.0, 1.0, 0.0)
-    jump display_value
-
-label .end02: # By Wentian Bu
-    # 咕咕结局
-    scene bg end02 with fade
-    "你咕咕了群友们，弄哭了冠军。"
-    "End 02 - 梨花带雨的冠军"
-    scene black with Fade(3.0, 1.0, 0.0)
-    jump display_value
-
-label .end03: # By Alan Li
-    # 逃离失败成为难民
-    scene bg end03 with fade
-    "你们逃离失败被困在舟山客运站，过上了难民生活。"
-    "End 03 - 难民的麦当劳"
-    scene black with Fade(3.0, 1.0, 0.0)
-    jump display_value
+    $ dj_tips = "end1"
+    jump end_tips
 
 label .end04: # By Conway Tan
     stop music fadeout 2.0
@@ -78,7 +95,8 @@ label .end04: # By Conway Tan
     "……""……"
     scene bg end04 with fade
     "你和万千儿一起前往了珠海，这一路上你们聊了很多！你们感觉和彼此情投意合，恭喜你们在一起了！"
-    "End 04 - 意外的美好"
+    "End 02 - 意外的美好"
+    $ dj_tips = "end2"
     stop music fadeout 3.0
     scene black with Fade(3.0, 1.0, 0.0)
     jump display_value
@@ -105,7 +123,8 @@ label .end05:
     pause 1
     "列车广播""密云"
 
-    "End 05 - 行进的列车"
+    "End 03 - 行进的列车"
+    $ dj_tips = "end3"
     scene black with Fade(3.0, 1.0, 0.0)
     jump display_value
 
@@ -121,14 +140,17 @@ label .g_end06:
 
     你整理好衣服走出房间，对面的房间传出连南的磨牙声，还有壮壮的鼾声。突然啪的一声，应该是冠军又梦中扇人了。
 
-    你看了一下群消息，发现他们四点多起床去看了日出。群里还有人说：“@樱桃神 666啊，那就不打扰了/斜眼笑”。
+    你看了一下群消息，发现他们四点多起床去看了日出。
+    
+    群里还有人说：“@樱桃神 666啊，那就不打扰了/斜眼笑”。
 
     看来他们都发现了啊……
     """
     me"他们今天去看日出了呢。"
     tea"嗯，我看到他们的说说了。"
     me"遗憾吗？"
-    tea"有…那么一点点。不过，跟你在一起，我也一样开心呢。"
+    tea"有…那么一点点。"
+    tea"不过，跟你在一起，我也一样开心呢。"
     
     scene dj road leave with fade
     """
@@ -202,6 +224,7 @@ label .g_end06:
     Good Ending - 徐徐展开的画卷
     """
     stop music fadeout 3.0
+    $ dj_tips = "end4"
     scene black with Fade(3.0, 1.0, 0.0)
     jump display_value
 
@@ -306,6 +329,7 @@ label .g_end07:
     Normal Ending - 埋藏心底的感情
     """
     stop music fadeout 3.0
+    $ dj_tips = "end5"
     scene black with Fade(3.0, 1.0, 0.0)
     jump display_value
 

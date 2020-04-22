@@ -170,7 +170,11 @@ label .s42sunrise:
     wqbh"你咋这么菜，昨晚不是提前回去睡了吗？"
     han"我也不太行了，昨晚一直都没睡"
     ## May jump story
-    ## AutoSave 11-6
+    ## AutoSave 2-5
+    python:
+        renpy.take_screenshot()
+        renpy.save("12-5", "去不去后会无期标建？")
+
     menu:
         "于是众人决定分为两拨，你决定："
         "后会无期标建肯定要去啊！睡觉？睡个p！":
@@ -203,8 +207,7 @@ label .s43sun:
     yourong"冲冲冲！"
     conway"走那么快干啥，我要拍年度图呢"
     shou"谁给你拍你这也太磨叽了。"
-    ## May jump story
-    ## AutoSave 12-1
+    ## Not important
     menu:
         "这时你决定："
         "冲冲冲，冠军拍照太磨叽了，不知道啥时候才能到海神像":
@@ -325,8 +328,7 @@ label .s48road:
     "老板""可以啊，但得等我下次回岛，或者我帮你们带到舟山寄也行。"
     lian"不急不急，等您回来寄就好，还是东极岛上寄出来比较有趣。"
     "大家于是决定合买一套，纷纷拿起笔开始写起来。"
-    ## May jump story
-    ## AutoSave 12-2
+    ## Not important
     menu:
         "你是否要寄给在香港的妹妹呢？"
         "那肯定要寄啊，东极岛寄出的多有意思":
@@ -718,8 +720,7 @@ label .s65villa:
     scene ghost door dark with dissolve
     play music paradise_island fadein 2.0
     "结束后，部分人熬不动准备休息了，你也走出房门，路过对面那个上锁的小屋子时，突然发现门把手上多了一把钥匙。"
-    ## May jump story
-    ## AutoSave 12-3
+    ## Not important
     menu:
         "这时你："
         "询问大家有人进过这个屋子吗？这个钥匙是怎么回事？":

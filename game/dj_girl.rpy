@@ -29,8 +29,7 @@ label .gs01room:
     lian"九点多的吧。你和小茶可以睡个好觉，好好在船上上等仓享受二人世界"
     me"......你有毒吧"
     lian"哈哈哈哈加油。你不洗我先去洗了。"
-    ## May jump story
-    ## AutoSave 13-1
+    ## Not important
     menu:
         "这时你选择："
         "好，你先去洗吧，明天你还要早起":
@@ -152,7 +151,11 @@ label .gs04sos:
     "正在玩手机，突然QQ上小茶突然来找你："
     tea"哥哥我好害怕，房间里刚才有个大蜘蛛在到处乱爬，我们不敢打。"
     ## May lead to different endings
-    ## AutoSave 13-2
+    ## AutoSave 3-2
+    python:
+        renpy.take_screenshot()
+        renpy.save("13-2", "去不去帮小茶打蜘蛛呢？")
+
     menu:
         "你如何回复："
         "好，你别怕，我马上过来":
@@ -242,7 +245,10 @@ label .gs06morning:
     play music melody_of_night_17 fadein 2.0
     tea"你过来我房间吧"
     ## May jump story
-    ## AutoSave 13-3
+    ## AutoSave 3-3
+    python:
+        renpy.take_screenshot()
+        renpy.save("13-3", "小茶叫你去她房间……")
     menu:
         "你怎么回复："
         "好的，我过来了":
@@ -420,7 +426,11 @@ label .gs12message:
     tea"我先出去，你过几分钟再出来，我在楼下门口等你。"
     "你抬起头，发现她眼睛亮亮的，偷偷给你使眼色。"
     ## May lead to different endings
-    ## AutoSave 13-4
+    ## AutoSave 3-4
+    python:
+        renpy.take_screenshot()
+        renpy.save("13-4", "小茶悄悄约你出去……")
+
     menu:
         "你如何回复："
         "好":
@@ -505,7 +515,11 @@ label .gs13chat:
     """
     "小茶的声音渐渐哽咽了，迎着星光，她脸颊上晶莹的泪水闪闪发亮。"
     ## May lead to different Endings
-    ## AutoSave 13-5
+    ## AutoSave 3-5
+    python:
+        renpy.take_screenshot()
+        renpy.save("13-5", "小茶伤心地哭了，你怎么办？")
+
     menu .girl_choice:
         "你该怎么办？"
         "什么都不说，紧紧抱住她":
@@ -876,7 +890,11 @@ label .gs17love:
     "小茶清澈的眼睛里浮上一层水雾，她低下头，双肩轻轻耸动，突然拉开房门头也不回地冲了出去……"
     play music crime_and_respon fadein 0.5
     ## May jump story
-    ## AutoSave 13-6
+    ## AutoSave 3-6
+    python:
+        renpy.take_screenshot()
+        renpy.save("13-6", "小茶冲出了房间……")
+        
     menu:
         "你怎么办呢？"
         "跟上她":
