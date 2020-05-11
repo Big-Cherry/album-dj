@@ -32,7 +32,6 @@ label end_tips:
     # 结局提示
     python:
         tips_dict = {
-            "end1": "你跳过了所有的主线剧情。你可以在存档页B1中读取存档1来游玩被跳过的剧情。",
             "end2": "你进入了主线的一个分支结局。你可以在存档页B3中读取存档1来游玩主线的另一个结局，或是读取B1中的存档2来游玩学妹线。",
             "end3": "你进入了主线的一个分支结局。你可以在存档页B3中读取存档1来游玩主线的另一个结局，或是读取B1中的存档2来游玩学妹线。",
             "end4": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
@@ -47,8 +46,8 @@ label end_tips:
     "温馨提示""在存档页面B1-B3中自动为你存档了可能跳过大量剧情的关键分支问题。你可以读档来游玩被跳过的部分。"
     
     scene preview with fade
-    scene black with Fade(3.0, 0.5, 0.0)
     pause
+    scene black with Fade(1.5, 0.5, 0.0)
     return
 
 label dj_endings:
@@ -58,9 +57,9 @@ label .end01: # By Alan Li
     scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
     stop music fadeout 2.0
-    scene black with Fade(3.0, 1.0, 0.0)
-    $ dj_tips = "end1"
-    jump end_tips
+    scene black with Fade(3.0, 1.0, 1.0)
+    "温馨提示""你跳过了所有的主线剧情。你可以在存档页B1中读取存档1来游玩被跳过的剧情。"
+    return
 
 label .end04: # By Conway Tan
     stop music fadeout 2.0
@@ -98,7 +97,7 @@ label .end04: # By Conway Tan
     "End 02 - 意外的美好"
     $ dj_tips = "end2"
     stop music fadeout 3.0
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 
@@ -125,7 +124,7 @@ label .end05:
 
     "End 03 - 行进的列车"
     $ dj_tips = "end3"
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 label .g_end06:
@@ -225,7 +224,7 @@ label .g_end06:
     """
     stop music fadeout 3.0
     $ dj_tips = "end4"
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 label .g_end07:
@@ -330,7 +329,7 @@ label .g_end07:
     """
     stop music fadeout 3.0
     $ dj_tips = "end5"
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 
@@ -401,5 +400,5 @@ label .g_end08:
     Bad Ending - 渐行渐远的背影
     """
     stop music fadeout 3.0
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
