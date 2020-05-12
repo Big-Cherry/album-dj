@@ -10,12 +10,6 @@
 #  
 # ###########################################################
 
-label dbgend:
-    scene dbg dev
-    "前方施工，禁止通行"
-    "好吧，看来前面还没有开发完呢，下次再来看吧。"
-    return
-
 label display_value:
     $ renpy.movie_cutscene('video/final.avi')
 
