@@ -224,7 +224,7 @@ label .s12villa:
         "这个鸟不拉屎村，哪来的出租，我们可能需要四点起床，走到最近的公交站...":
             "众人""靠，这都一点了那我们还睡个啥，直接玩通宵吧。"
             "于是众人玩了个通宵，果然打不到出租车，坐公交前往港口。"
-            stop music fadeout 2.0
+            stop music fadeout 1.0
             jump dj_103.s15port
 
         "使用滴滴预约明天的出租车吧":
@@ -241,10 +241,65 @@ label .s12villa:
     jump .s13room
 
 label .s13room:
+    scene zs villa shower with fade
+    "你回到房间进入浴室。"
+    "？这个水龙头为什么这么像麦克风？"
+    "不如来高歌一首，表达对明天旅程的期待。"
+    ## Not important
+    menu:
+        "你准备唱什么浴室金曲捏？"
+        "死了都要爱":
+            play sing sldya fadein 1.0
+            me"""
+            死了都要爱，不淋漓尽致不痛快
+            
+            感情多深，只有这样，才足够表白
+
+            死了都要爱，不哭到微笑不痛快
+
+            宇宙毁灭心还在……
+            """
+            "浴室传来你撕心裂肺的歌声，响彻全楼。"
+            bwt"狗屎，抢我金曲"
+            
+        "平凡之路":
+            play sing pfzl fadein 1.0
+            me"""
+            我曾经跨过山和大海，也穿过人山人海
+
+            我曾经拥有着的一切，转眼都飘散如烟
+            
+            我曾经失落失望失掉所有方向，直到看见平凡才是唯一的答案……
+            """
+            "浴室传来你惊天动地的歌声，响彻全楼。"
+            conway"狗屎，抢我金曲"
+
+        "告白气球":
+            play sing gbqq fadein 1.0
+            me"""
+            你说 你有点难追
+            
+            想让 我知难而退
+            
+            礼物 不需挑最贵
+            
+            只要 香榭的落叶
+            
+            喔 营造浪漫 的约会
+            
+            不害怕 搞砸一切
+            
+            拥有你就拥有 全世界……
+            """
+            "浴室传来你不可言传的歌声，响彻全楼。"
+            lian"狗屎，抢我金曲"
+    "……"
+    stop sing fadeout 1.0
+
     scene zs villa room1 with fade
     play music happy_1 fadein 2.0
-    "你回到房间，正和小茶闲聊着有没有什么吃的，"
-    "突然发现床旁边的地板上出现了一只超级大的蜘蛛！"
+    "洗完澡，你走出浴室坐在床上玩手机。"
+    "床旁边的地板上突然出现了一只超级大的蜘蛛！"
     image im_spider = im.FactorScale("images/zs/spider.png",0.2)
     show im_spider:
         xalign 0.4 yalign 1.2

@@ -136,6 +136,14 @@ label .s01room:
         "你是否也要带个学妹呢？"
         "我觉得可以":
             $ dj_withgirl = True
+            "连南都带了，那我也把她带上吧。"
+            "系统消息""你邀请小茶加入了群聊。"
+            zhuang"？"
+            ming"@樱桃神 这是哪个学妹？"
+            lian"樱桃神牛逼啊！"
+            yourong"666666"
+            "……"
+            jump .s02apartment
             
         "我觉得不行":
             jump .s02apartment
