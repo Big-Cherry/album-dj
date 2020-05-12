@@ -40,6 +40,7 @@ label splashscreen:
 # 游戏在此开始。
 
 label start:
-    
+
+    stop music fadeout 1.0    
     # 开始东极岛故事线
     jump dj_start

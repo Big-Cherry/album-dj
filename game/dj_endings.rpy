@@ -10,12 +10,6 @@
 #  
 # ###########################################################
 
-label dbgend:
-    scene dbg dev
-    "前方施工，禁止通行"
-    "好吧，看来前面还没有开发完呢，下次再来看吧。"
-    return
-
 label display_value:
     $ renpy.movie_cutscene('video/final.avi')
 
@@ -32,7 +26,6 @@ label end_tips:
     # 结局提示
     python:
         tips_dict = {
-            "end1": "你跳过了所有的主线剧情。你可以在存档页B1中读取存档1来游玩被跳过的剧情。",
             "end2": "你进入了主线的一个分支结局。你可以在存档页B3中读取存档1来游玩主线的另一个结局，或是读取B1中的存档2来游玩学妹线。",
             "end3": "你进入了主线的一个分支结局。你可以在存档页B3中读取存档1来游玩主线的另一个结局，或是读取B1中的存档2来游玩学妹线。",
             "end4": "你进入了学妹线的一个分支结局。你可以在存档页B3中读取存档5来游玩学妹线的其他结局，或是读取B1中的存档2来游玩主线。",
@@ -47,8 +40,8 @@ label end_tips:
     "温馨提示""在存档页面B1-B3中自动为你存档了可能跳过大量剧情的关键分支问题。你可以读档来游玩被跳过的部分。"
     
     scene preview with fade
-    scene black with Fade(3.0, 0.5, 0.0)
     pause
+    scene black with Fade(1.5, 0.5, 0.0)
     return
 
 label dj_endings:
@@ -58,9 +51,9 @@ label .end01: # By Alan Li
     scene bg end01_2 with dissolve
     "End 01 - 优秀的毕业论文"
     stop music fadeout 2.0
-    scene black with Fade(3.0, 1.0, 0.0)
-    $ dj_tips = "end1"
-    jump end_tips
+    scene black with Fade(3.0, 1.0, 1.0)
+    "温馨提示""你跳过了所有的主线剧情。你可以在存档页B1中读取存档1来游玩被跳过的剧情。"
+    return
 
 label .end04: # By Conway Tan
     stop music fadeout 2.0
@@ -98,7 +91,7 @@ label .end04: # By Conway Tan
     "End 02 - 意外的美好"
     $ dj_tips = "end2"
     stop music fadeout 3.0
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 
@@ -112,7 +105,7 @@ label .end05:
     "诶？厕所门口那两个人一长一短好熟悉啊……"
     me"有容？？你不是昨天就走了吗？！"
     yourong"啥玩意！好巧啊桃神！你也是这班车？"
-    me"小杰瑞？你又是哪冒出来的"
+    me"小杰瑞？你又是哪冒出来的？"
     "小杰瑞""我们没买到座位，只有无座了，只能在厕所门口混了一晚上，太求惨了..."
 
     play sound notify
@@ -125,7 +118,7 @@ label .end05:
 
     "End 03 - 行进的列车"
     $ dj_tips = "end3"
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 label .g_end06:
@@ -170,7 +163,7 @@ label .g_end06:
     me"你太瘦了，压在你肩膀上你会很累的。"
     "小茶傲娇了起来："
     tea"哼，爱靠不靠。"
-    "然而很快又轻轻拉起了你的手，"
+    "然而很快又轻轻拉起了你的手。"
     tea"桃桃，你还是靠一会儿吧，我不累的。我也想成为你可以依靠的人啊。"
 
     scene zs station with fade
@@ -225,7 +218,7 @@ label .g_end06:
     """
     stop music fadeout 3.0
     $ dj_tips = "end4"
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 label .g_end07:
@@ -330,7 +323,7 @@ label .g_end07:
     """
     stop music fadeout 3.0
     $ dj_tips = "end5"
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
 
 
@@ -339,8 +332,8 @@ label .g_end08:
     play music fragile_tenderness fadein 2.0
     "你迷迷糊糊听到一阵嘈杂，睁开眼睛发现是众人回来了。"
     me"你们干什么去啊？"
-    zhuang"你才醒啊，我们早晨四点多本来准备叫你，"
-    zhuang"结果你睡得跟死猪似的根本叫不醒，只好由你继续睡了。"
+    zhuang"你才醒啊？"
+    zhuang"我们早晨四点多本来准备叫你的，结果你睡得跟死猪似的根本叫不醒，只好让你继续睡了。"
     lian"困死爸爸了。对了，你和小茶的返程船票是十一点多的，千万别误船了。我们先睡了。"
     """
     你一看手机，发现已经九点多了……
@@ -401,5 +394,5 @@ label .g_end08:
     Bad Ending - 渐行渐远的背影
     """
     stop music fadeout 3.0
-    scene black with Fade(3.0, 1.0, 0.0)
+    scene black with Fade(3.0, 1.0, 1.0)
     jump display_value
