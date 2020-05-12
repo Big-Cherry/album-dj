@@ -288,7 +288,7 @@ screen navigation():
         yalign 0.05
 
         if main_menu:
-            imagebutton auto "gui/navi/website_%s.png" action OpenURL("https://www.bigcherry.com.cn")
+            imagebutton auto "gui/navi/website_%s.png" action OpenURL("https://game.bigcherry.com.cn")
 
     vbox:
         style_prefix "navigation"
