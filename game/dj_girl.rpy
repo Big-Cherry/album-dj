@@ -210,6 +210,8 @@ label .gs05spider:
             image time4 = Text("上午9:00", xalign=0.5, yalign=0.55)
             show time4 with dissolve
             pause 1.0
+            scene zs villa room1 with fade
+            play music melody_of_night_17 fadein 2.0
             "你犹豫了一会儿，还是叫醒了她。"
             $ dj_girl_opinion += 20
             jump .gs07sleep
@@ -401,7 +403,8 @@ label .gs11ship:
 
     tea"其实我挺抗拒异地的，以为那样双方很难体会到对方的细微感受。"
     me"但也不是一定的吧，你看小明和诺诺，不也那样过来了吗，现在也挺好。"
-    me"异地不是问题，重要的是爱，没有爱了，就算每天都见面，也只会觉得对方很烦吧。"
+    me"异地不是问题，重要的是爱。"
+    me"没有爱了，就算每天都见面，也只会觉得对方很烦吧。"
     tea"嗯...哥哥你说的对。"
     """
     你和小茶分享了带的巧克力作为早餐，之后没休息好的小茶靠在你的肩膀上休息了一会儿。
