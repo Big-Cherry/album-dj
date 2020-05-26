@@ -17,11 +17,11 @@ define config.name = _("大樱桃纪念册·东极篇")
 ## 决定上面给出的标题是否显示在主界面屏幕。设置为 False 来隐藏标题。
 
 define gui.show_name = False
-define gui.show_version = True
+define gui.show_version = False
 
 ## 游戏版本号。
 
-define config.version = "0.6-rc1"
+define config.version = "1.0"
 
 
 ## 放置在游戏“关于”屏幕的文本。将文本放在三个引号之间，并在段落之间留一个空行。
@@ -146,7 +146,7 @@ default preferences.afm_time = 10
 ##
 ## 该命令一般不应变更，若要变更，应为有效字符串而不是表达式。
 
-define config.save_directory = "tourofeastpole-1583764928"
+define config.save_directory = "bigcherryalbum-dj"
 
 
 ## 图标 ##########################################################################
@@ -208,4 +208,4 @@ init python:
 
 ## Set developer mode
 
-define config.developer = True
+define config.developer = False
